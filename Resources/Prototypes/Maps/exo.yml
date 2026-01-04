@@ -2,7 +2,7 @@
   id: Exo
   mapName: 'Exo'
   mapPath: /Maps/exo.yml
-  minPlayers: 40
+  minPlayers: 0
   maxPlayers: 80
   stations:
     Exo:
