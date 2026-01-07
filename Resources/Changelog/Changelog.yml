@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: rumaks-xyz, SlamBamActionman
-  changes:
-  - message: Advanced Brute chemicals, Insuzine, Ultravasculine and Sigynate have
-      had changes to their healing, metabolism rates and behaviors.
-    type: Tweak
-  - message: Bicardine and Advanced Brute Chemicals once again create Razorium when
-      mixed.
-    type: Tweak
-  id: 8853
-  time: '2025-08-14T17:32:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39472
 - author: ScholarNZL
   changes:
   - message: Added IC visibility of "animal organs", e.g "animal lungs" etc, to facilitate
@@ -2984,13 +2973,6 @@
   id: 9240
   time: '2025-12-01T05:47:46.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/41489
-- author: TheShuEd
-  changes:
-  - message: Santa anomaly & santa anomaly infections is back!
-    type: Add
-  id: 9241
-  time: '2025-12-01T11:01:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41654
 - author: Spessmann
   changes:
   - message: Added a new station, Snowball, a round and icy lowpop station.
@@ -3588,13 +3570,6 @@
   id: 9317
   time: '2025-12-18T21:08:51.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/33157
-- author: Fildrance
-  changes:
-  - message: reroll feature for RnD research console
-    type: Add
-  id: 9318
-  time: '2025-12-18T21:22:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32931
 - author: Hitlinemoss
   changes:
   - message: Small cardboard boxes have been added (2x2 instead of 3x3), and can be
@@ -3663,14 +3638,6 @@
   id: 9324
   time: '2025-12-21T20:33:07.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/41932
-- author: SlamBamActionman
-  changes:
-  - message: 'EXPERIMENTAL: Changed the name of the "LOOC" chat channel to "Help"
-      to reflect its primary usage.'
-    type: Tweak
-  id: 9325
-  time: '2025-12-22T00:46:26.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41933
 - author: MilonPL
   changes:
   - message: Fixed beaker solutions duplicating whenever it's thrown.
@@ -3900,3 +3867,34 @@
   id: 9353
   time: '2026-01-03T21:43:01.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/41425
+- author: TheFlyingSentry
+  changes:
+  - message: Other Dragon rifts now remain intact when one is destroyed.
+    type: Tweak
+  id: 9354
+  time: '2026-01-05T00:42:26.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42234
+- author: ThatGuyUSA
+  changes:
+  - message: There are more IDs and icons that can be used for a variety of roles.
+    type: Add
+  id: 9355
+  time: '2026-01-06T10:41:32.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42200
+- author: 0-Anon
+  changes:
+  - message: Guaranteed a bottle of Crazy Glue and Crazy Lube in the toy box.
+    type: Tweak
+  id: 9356
+  time: '2026-01-07T01:32:38.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42146
+- author: ScarKy0
+  changes:
+  - message: The Chameleon Projector now requires a battery to operate. It spawns
+      with a medium powercell, giving it a starting battery life of 3 minutes.
+    type: Add
+  - message: Lowered the price of the Chameleon Projector to 3TC.
+    type: Tweak
+  id: 9357
+  time: '2026-01-07T06:05:08.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42271
