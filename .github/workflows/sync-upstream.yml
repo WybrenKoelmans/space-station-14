@@ -1,0 +1,70 @@
+---
+name: Sync Upstream
+
+'on':
+  schedule:
+    # Run at midnight UTC every night
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream \
+            https://github.com/space-wizards/space-station-14.git || true
+          git remote -v
+
+      - name: Fetch upstream
+        run: git fetch upstream master
+
+      - name: Get current commit SHA
+        id: before
+        run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Merge upstream/master
+        id: merge
+        run: |
+          git merge upstream/master -m "Merge upstream/master" || {
+            echo "Merge conflicts detected. Manual intervention required."
+            exit 1
+          }
+
+      - name: Get new commit SHA
+        id: after
+        run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Push changes
+        if: steps.before.outputs.sha != steps.after.outputs.sha
+        run: git push origin master
+
+      - name: Trigger publish workflow
+        if: steps.before.outputs.sha != steps.after.outputs.sha
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'publish.yml',
+              ref: 'master'
+            });
+            console.log('Publish workflow triggered successfully');
