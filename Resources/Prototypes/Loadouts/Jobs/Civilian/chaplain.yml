@@ -65,21 +65,25 @@
   id: ChaplainJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitChaplain
+    pocket2: WalletFilled
 
 - type: loadout
   id: ChaplainJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtChaplain
+    pocket2: WalletFilled
 
 - type: loadout
   id: ChaplainRobesDark
   equipment:
     jumpsuit: ClothingUniformJumpsuitMonasticRobeDark
+    pocket2: WalletFilled
 
 - type: loadout
   id: ChaplainRobesLight
   equipment:
     jumpsuit: ClothingUniformJumpsuitMonasticRobeLight
+    pocket2: WalletFilled
 
 # Neck
 - type: loadout

@@ -14,16 +14,19 @@
   id: BotanistJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitHydroponics
+    pocket2: WalletFilled
 
 - type: loadout
   id: BotanistJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHydroponics
+    pocket2: WalletFilled
 
 - type: loadout
   id: BotanistOveralls
   equipment:
     jumpsuit: ClothingUniformOveralls
+    pocket2: WalletFilled
 
 # Back
 - type: loadout

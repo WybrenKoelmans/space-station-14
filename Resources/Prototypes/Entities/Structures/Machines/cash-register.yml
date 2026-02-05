@@ -1,0 +1,60 @@
+- type: entity
+  id: CashRegister
+  parent: BaseStructure
+  name: cash register
+  description: A cash register to register .. cash
+  components:
+  - type: InteractionOutline
+  - type: Rotatable
+  - type: Sprite
+    sprite: Structures/Machines/cash_register.rsi
+    drawdepth: SmallObjects
+    layers:
+    - state: cash_register
+    - state: drawer
+      map: ["drawer"]
+      visible: false
+    - state: lock
+      map: ["enum.LockVisualLayers.Lock", "locked"]
+      visible: false
+  - type: Appearance
+  - type: Transform
+    noRot: false
+  - type: Storage
+    grid:
+    - 0,0,1,8
+    - 3,0,4,8
+    - 6,0,7,8
+    maxItemSize: Small
+    whitelist:
+      tags:
+      - Cash
+  - type: AccessReader
+    access: [["Service"]]
+  - type: Lock
+  - type: LockedStorage
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        drawer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.LockVisuals.Locked:
+          locked:
+            False: { visible: true }
+            True: { visible: false }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer

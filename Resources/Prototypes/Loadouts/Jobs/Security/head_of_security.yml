@@ -13,36 +13,42 @@
   id: HeadofSecurityJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoS
+    pocket2: WalletFilledExtra
   groupBy: "jumpsuit"
 
 - type: loadout
   id: HeadofSecurityJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoS
+    pocket2: WalletFilledExtra
   groupBy: "jumpskirt"
 
 - type: loadout
   id: HeadofSecurityTurtleneck
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoSAlt
+    pocket2: WalletFilledExtra
   groupBy: "jumpsuit"
 
 - type: loadout
   id: HeadofSecurityTurtleneckSkirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoSAlt
+    pocket2: WalletFilledExtra
   groupBy: "jumpskirt"
 
 - type: loadout
   id: HeadofSecurityFormalSuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitHosFormal
+    pocket2: WalletFilledExtra
   groupBy: "jumpsuit"
 
 - type: loadout
   id: HeadofSecurityFormalSkirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHosFormal
+    pocket2: WalletFilledExtra
   groupBy: "jumpskirt"
 
 # Head

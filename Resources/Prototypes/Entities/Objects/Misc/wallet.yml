@@ -1,0 +1,52 @@
+- type: entity
+  name: wallet
+  parent: BaseStorageItem
+  id: Wallet
+  description: A wallet for holding your cash.
+  components:
+  - type: Item
+    size: Small
+    storedRotation: -90
+  - type: Sprite
+    sprite: Objects/Misc/wallet.rsi
+    state: icon
+  - type: Storage
+    grid:
+    - 0,0,1,6
+    - 3,0,4,6
+    - 6,0,7,6
+    maxItemSize: Normal
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      tags:
+        - Cash
+  - type: Dumpable
+
+- type: entity
+  parent: Wallet
+  id: WalletFilled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: SpaceCash10
+        amount: 3
+
+- type: entity
+  parent: Wallet
+  id: WalletFilledExtra
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SpaceCash10
+          prob: 0.5
+        - id: SpaceCash100
+          prob: 0.4
+        - id: SpaceCash100
+          prob: 0.3
+        - id: SpaceCash1000
+          prob: 0.2
+

@@ -29,11 +29,13 @@
   id: CargoTechnicianJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitCargo
+    pocket2: WalletFilled
 
 - type: loadout
   id: CargoTechnicianJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtCargo
+    pocket2: WalletFilled
 
 # Back
 - type: loadout

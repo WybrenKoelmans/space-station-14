@@ -37,7 +37,7 @@
         - id: ClothingOuterCoatJensenSyndie
         - id: ClothingUniformJumpsuitTacticool
         - id: ClothingEyesGlassesSunglasses
-        - id: SpaceCash30000
+        - id: SpaceCash10000
         - id: EncryptionKeySyndie
         - id: RubberStampTrader
         - id: PhoneInstrumentSyndicate
@@ -55,7 +55,7 @@
         children:
         - id: ClothingOuterCoatJensen
         - id: ClothingEyesGlassesSunglasses
-        - id: SpaceCash20000
+        - id: SpaceCash10000
         - id: ClothingHandsGlovesColorBlack
 
 - type: entity

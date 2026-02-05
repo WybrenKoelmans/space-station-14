@@ -3,8 +3,10 @@
   id: ReporterJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitReporter
+    pocket2: WalletFilled
 
 - type: loadout
   id: JournalistJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitJournalist
+    pocket2: WalletFilled

@@ -45,11 +45,13 @@
   id: MedicalDoctorJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    pocket2: WalletFilled
 
 - type: loadout
   id: MedicalDoctorJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtMedicalDoctor
+    pocket2: WalletFilled
 
 - type: loadout
   id: SeniorPhysicianJumpsuit
@@ -58,6 +60,7 @@
     proto: SeniorPhysician
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: SeniorPhysicianJumpskirt
@@ -66,21 +69,25 @@
     proto: SeniorPhysician
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorPhysician
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: MedicalBlueScrubs
   equipment:
     jumpsuit: UniformScrubsColorBlue
+    pocket2: WalletFilled
 
 - type: loadout
   id: MedicalGreenScrubs
   equipment:
     jumpsuit: UniformScrubsColorGreen
+    pocket2: WalletFilled
 
 - type: loadout
   id: MedicalPurpleScrubs
   equipment:
     jumpsuit: UniformScrubsColorPurple
+    pocket2: WalletFilled
 
 # Back
 - type: loadout

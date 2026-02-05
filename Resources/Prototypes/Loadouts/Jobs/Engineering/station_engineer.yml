@@ -51,16 +51,19 @@
   id: StationEngineerJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineering
+    pocket2: WalletFilled
 
 - type: loadout
   id: StationEngineerJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtEngineering
+    pocket2: WalletFilled
 
 - type: loadout
   id: StationEngineerHazardsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineeringHazard
+    pocket2: WalletFilled
 
 - type: loadout
   id: SeniorEngineerJumpsuit
@@ -69,6 +72,7 @@
     proto: SeniorEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorEngineer
+    pocket2: WalletFilled
 
 - type: loadout
   id: SeniorEngineerJumpskirt
@@ -77,6 +81,7 @@
     proto: SeniorEngineering
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorEngineer
+    pocket2: WalletFilled
 
 # Back
 - type: loadout

@@ -280,9 +280,9 @@
       weight: 2
       amount: !type:RangeNumberSelector
         range: 1, 4
-    - id: SpaceCash2500
-      amount: !type:RangeNumberSelector
-        range: 1, 4
+    #- id: SpaceCash2500
+    #  amount: !type:RangeNumberSelector
+    #    range: 1, 4
     - id: SpaceCash5000
       weight: 0.25
       amount: !type:RangeNumberSelector

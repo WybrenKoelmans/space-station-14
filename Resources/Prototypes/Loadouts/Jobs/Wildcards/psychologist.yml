@@ -3,8 +3,10 @@
   id: PsychologistJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitPsychologist
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: PsychologistJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtPsychologist
+    pocket2: WalletFilledExtra

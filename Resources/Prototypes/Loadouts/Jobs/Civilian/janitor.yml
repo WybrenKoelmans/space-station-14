@@ -18,11 +18,13 @@
   id: JanitorJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitJanitor
+    pocket2: WalletFilled
 
 - type: loadout
   id: JanitorJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtJanitor
+    pocket2: WalletFilledExtra
 
 # Gloves
 - type: loadout

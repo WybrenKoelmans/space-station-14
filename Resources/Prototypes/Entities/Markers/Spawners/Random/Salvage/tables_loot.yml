@@ -154,9 +154,9 @@
           range: 3, 5
         children:
         - id: SpaceCash1000
-          weight: 60
-        - id: SpaceCash2500
-          weight: 25
+          weight: 85
+        #- id: SpaceCash2500
+        #  weight: 25
         - id: SpaceCash5000
           weight: 14
         - id: SpaceCash10000

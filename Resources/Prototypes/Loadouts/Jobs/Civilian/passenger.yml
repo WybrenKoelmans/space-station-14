@@ -33,11 +33,13 @@
   id: GreyJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorGrey
+    pocket2: WalletFilled
 
 - type: loadout
   id: GreyJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorGrey
+    pocket2: WalletFilled
 
 # Rainbow
 - type: loadout
@@ -47,6 +49,7 @@
     proto: GreyTider
   equipment:
     jumpsuit: ClothingUniformColorRainbow
+    pocket2: WalletFilled
 
 # Rainbow Jumpskirt
 - type: loadout
@@ -56,6 +59,7 @@
     proto: GreyTider
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorRainbow
+    pocket2: WalletFilled
 
 # Ancient
 - type: loadout
@@ -65,6 +69,7 @@
     proto: GreyTider
   equipment:
     jumpsuit: ClothingUniformJumpsuitAncient
+    pocket2: WalletFilled
 
 # Neck
 - type: loadout

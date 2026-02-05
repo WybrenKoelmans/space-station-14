@@ -39,26 +39,31 @@
   id: SecurityJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitSec
+    pocket2: WalletFilled
 
 - type: loadout
   id: SecurityJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtSec
+    pocket2: WalletFilled
 
 - type: loadout
   id: SecurityJumpsuitGrey
   equipment:
     jumpsuit: ClothingUniformJumpsuitSecGrey
+    pocket2: WalletFilled
 
 - type: loadout
   id: SecurityJumpskirtGrey
   equipment:
     jumpsuit: ClothingUniformJumpskirtSecGrey
+    pocket2: WalletFilled
 
 - type: loadout
   id: TrooperUniform
   equipment:
     jumpsuit: ClothingUniformSecurityTrooper
+    pocket2: WalletFilled
 
 - type: loadout
   id: SeniorOfficerJumpsuit
@@ -67,6 +72,7 @@
     proto: SeniorOfficer
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorOfficer
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: SeniorOfficerJumpskirt
@@ -75,6 +81,7 @@
     proto: SeniorOfficer
   equipment:
     jumpsuit: ClothingUniformJumpskirtSeniorOfficer
+    pocket2: WalletFilledExtra
 
 # Back
 - type: loadout

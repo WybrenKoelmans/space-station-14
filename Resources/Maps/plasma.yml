@@ -146317,7 +146317,7 @@ entities:
     - type: Transform
       pos: -10.442953,-28.437914
       parent: 2
-- proto: SpaceCash2500
+- proto: SpaceCash1000
   entities:
   - uid: 7614
     components:

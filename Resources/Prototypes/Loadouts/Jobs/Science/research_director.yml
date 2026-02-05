@@ -37,11 +37,13 @@
   id: ResearchDirectorJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: ResearchDirectorJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtResearchDirector
+    pocket2: WalletFilledExtra
 
 # OuterClothing
 - type: loadout

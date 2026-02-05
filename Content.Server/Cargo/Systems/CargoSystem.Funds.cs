@@ -5,6 +5,9 @@ using Content.Shared.Database;
 using Content.Shared.Emag.Systems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.UserInterface;
+using System.Numerics;
+using Robust.Shared.Maths;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -55,8 +58,7 @@ public sealed partial class CargoSystem
         var ourAccount = _protoMan.Index(ent.Comp.Account);
         if (args.Account == null)
         {
-            var stackPrototype = _protoMan.Index(ent.Comp.CashType);
-            _stack.SpawnAtPosition(args.Amount, stackPrototype, Transform(ent).Coordinates);
+            SpawnSpaceCashBundle(Transform(ent).Coordinates, args.Amount, "SpaceCash");
 
             if (!_emag.CheckFlag(ent, EmagType.Interaction))
             {
@@ -102,6 +104,37 @@ public sealed partial class CargoSystem
         Dirty(ent);
     }
 
+    private void SpawnSpaceCashBundle(Robust.Shared.Map.EntityCoordinates coords, int amount, string basePrototypeId)
+    {
+        if (amount <= 0)
+            return;
+
+        var denominations = new int[] { 1000000, 100000, 50000, 25000, 10000, 5000, 1000, 500, 100, 10, 1 };
+
+        foreach (var denom in denominations)
+        {
+            if (amount <= 0)
+                break;
+
+            var count = amount / denom;
+            if (count <= 0)
+                continue;
+
+            var protoId = basePrototypeId + denom;
+            if (!_protoMan.HasIndex<EntityPrototype>(protoId))
+                continue;
+
+            for (var i = 0; i < count; i++)
+            {
+                var offset = new Vector2((float)((_random.NextDouble() - 0.5) * 0.5), (float)((_random.NextDouble() - 0.5) * 0.5));
+                var spawnCoords = coords.Offset(offset);
+                var uid = SpawnAtPosition(protoId, spawnCoords);
+                Transform(uid).LocalRotation = Angle.FromDegrees((float)(_random.NextDouble() * 360.0));
+            }
+
+            amount -= count * denom;
+        }
+    }
 
     private void OnSetFundingAllocation(Entity<FundingAllocationConsoleComponent> ent, ref SetFundingAllocationBuiMessage args)
     {

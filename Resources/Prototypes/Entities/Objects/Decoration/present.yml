@@ -409,7 +409,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: PresentTrash
-      - id: SpaceCash
+      - id: SpaceCash1
         prob: .01
         orGroup: GiftPool
       - id: SpaceCash10
@@ -423,9 +423,9 @@
       - id: SpaceCash1000
         prob: .01
         orGroup: GiftPool
-      - id: SpaceCash2500
-        prob: .004
-        orGroup: GiftPool
+      #- id: SpaceCash2500
+      #  prob: .004
+      #  orGroup: GiftPool
       - id: SpaceCash5000
         prob: .002
         orGroup: GiftPool

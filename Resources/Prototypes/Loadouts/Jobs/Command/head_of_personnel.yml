@@ -23,11 +23,13 @@
   id: HoPJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoP
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: HoPJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoP
+    pocket2: WalletFilledExtra
 
 # Head
 - type: loadout

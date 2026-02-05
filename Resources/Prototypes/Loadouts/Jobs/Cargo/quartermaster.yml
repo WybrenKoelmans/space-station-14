@@ -13,26 +13,31 @@
   id: QuartermasterJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitQM
+    pocket2: WalletFilled
 
 - type: loadout
   id: QuartermasterJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtQM
+    pocket2: WalletFilled
 
 - type: loadout
   id: QuartermasterTurtleneck
   equipment:
     jumpsuit: ClothingUniformJumpsuitQMTurtleneck
+    pocket2: WalletFilled
 
 - type: loadout
   id: QuartermasterTurtleneckSkirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtQMTurtleneck
+    pocket2: WalletFilled
 
 - type: loadout
   id: QuartermasterFormalSuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitQMFormal
+    pocket2: WalletFilled
 
 # Head
 - type: loadout

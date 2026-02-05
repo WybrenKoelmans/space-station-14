@@ -3,16 +3,19 @@
   id: AtmosphericTechnicianJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmos
+    pocket2: WalletFilled
 
 - type: loadout
   id: AtmosphericTechnicianJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtAtmos
+    pocket2: WalletFilled
 
 - type: loadout
   id: AtmosphericTechnicianJumpsuitCasual
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmosCasual
+    pocket2: WalletFilled
 
 # Back
 - type: loadout

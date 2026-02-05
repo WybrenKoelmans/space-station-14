@@ -3,11 +3,13 @@
   id: MusicianJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
+    pocket2: WalletFilled
 
 - type: loadout
   id: MusicianJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtMusician
+    pocket2: WalletFilled
 
 # Outerclothing
 - type: loadout

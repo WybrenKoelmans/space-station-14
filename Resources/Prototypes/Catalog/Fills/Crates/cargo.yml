@@ -59,14 +59,14 @@
     - id: SpaceCash10000
       weight: 0.1
     - id: SpaceCash5000
-    - id: SpaceCash2500
+    - id: SpaceCash1000
       weight: 4
     - id: SpaceCash500
       weight: 3
     - id: SpaceCash100
     - id: SpaceCash10
       weight: 0.5
-    - id: SpaceCash
+    - id: SpaceCash1
       weight: 0.1
 
 - type: entityTable

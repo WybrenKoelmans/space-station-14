@@ -3,11 +3,13 @@
   id: ChemistJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitChemistry
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: ChemistJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtChemistry
+    pocket2: WalletFilledExtra
 
 # Back
 - type: loadout

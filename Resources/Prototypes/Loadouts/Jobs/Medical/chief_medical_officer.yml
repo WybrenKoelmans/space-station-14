@@ -3,21 +3,25 @@
   id: ChiefMedicalOfficerJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMO
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: ChiefMedicalOfficerJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtCMO
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: ChiefMedicalOfficerTurtleneckJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMOTurtle
+    pocket2: WalletFilledExtra
 
 - type: loadout
   id: ChiefMedicalOfficerTurtleneckJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtCMOTurtle
+    pocket2: WalletFilledExtra
 
 # Head
 - type: loadout

@@ -49,7 +49,7 @@
     # money
     SpaceCash500: 1.0
     SpaceCash1000: 0.75
-    SpaceCash2500: 0.5
+    SpaceCash1000: 0.5
 
 - type: weightedRandomEntity
   id: SalvageRewardEpic
@@ -70,6 +70,6 @@
     ChemistryBottleCognizine: 1.0
     ChemistryBottleOmnizine: 1.0
     # money
-    SpaceCash2500: 1.0
+    SpaceCash1000: 1.0
     SpaceCash5000: 0.75
     SpaceCash10000: 0.5

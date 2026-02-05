@@ -23,16 +23,19 @@
   id: BartenderJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartender
+    pocket2: WalletFilled
 
 - type: loadout
   id: BartenderJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtBartender
+    pocket2: WalletFilled
 
 - type: loadout
   id: BartenderJumpsuitPurple
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartenderPurple
+    pocket2: WalletFilled
 
 # Outer clothing
 - type: loadout

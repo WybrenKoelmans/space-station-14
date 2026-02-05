@@ -15,11 +15,13 @@
   id: ChefJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitChef
+    pocket2: WalletFilled
 
 - type: loadout
   id: ChefJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtChef
+    pocket2: WalletFilled
 
 # Outer clothing
 - type: loadout

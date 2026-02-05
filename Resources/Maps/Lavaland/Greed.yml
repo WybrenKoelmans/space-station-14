@@ -225,8 +225,8 @@ entities:
     - type: Transform
       pos: -2.5508754,0.6783912
       parent: 1
-- proto: SpaceCash2500
-  entities:
+#- proto: SpaceCash1000
+#  entities:
   - uid: 83
     components:
     - type: Transform

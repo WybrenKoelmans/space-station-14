@@ -3,18 +3,22 @@
   id: LibrarianJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitLibrarian
+    pocket2: WalletFilled
 
 - type: loadout
   id: LibrarianJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtLibrarian
+    pocket2: WalletFilled
 
 - type: loadout
   id: CuratorJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitCurator
+    pocket2: WalletFilled
 
 - type: loadout
   id: CuratorJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtCurator
+    pocket2: WalletFilled
