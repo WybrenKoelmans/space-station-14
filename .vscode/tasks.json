@@ -76,6 +76,38 @@
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "run server",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "run",
+                "--project",
+                "Content.Server/Content.Server.csproj",
+                "--configuration",
+                "DebugOpt"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "run client",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "run",
+                "--project",
+                "Content.Client/Content.Client.csproj",
+                "--configuration",
+                "DebugOpt"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "run both",
+            "dependsOn": ["run client", "run server"],
+            "dependsOrder": "parallel",
+            "problemMatcher": []
         }
     ]
 }
