@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 268.0.0
+  engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/07/2025 22:51:59
-  entityCount: 18708
+  time: 02/06/2026 15:58:34
+  entityCount: 18720
 maps:
 - 1
 grids:
@@ -10822,6 +10822,8 @@ entities:
     - type: RadiationGridResistance
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 15607
@@ -22060,28 +22062,6 @@ entities:
     components:
     - type: Transform
       pos: 49.556282,3.5894375
-      parent: 2
-- proto: BaseChemistryEmptyVial
-  entities:
-  - uid: 4094
-    components:
-    - type: Transform
-      pos: 19.960098,21.84556
-      parent: 2
-  - uid: 4095
-    components:
-    - type: Transform
-      pos: 20.116348,21.62681
-      parent: 2
-  - uid: 8822
-    components:
-    - type: Transform
-      pos: 24.581747,10.684262
-      parent: 2
-  - uid: 15849
-    components:
-    - type: Transform
-      pos: 27.824532,35.632626
       parent: 2
 - proto: BaseComputerAiAccess
   entities:
@@ -46070,6 +46050,62 @@ entities:
     - type: Transform
       pos: 13.83231,6.7838364
       parent: 2
+- proto: CashRegister
+  entities:
+  - uid: 18710
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,-6.5
+      parent: 2
+    - type: Storage
+      storedItems:
+        18711:
+          position: 0,0
+          _rotation: South
+        18712:
+          position: 3,0
+          _rotation: South
+        18713:
+          position: 6,0
+          _rotation: South
+        18714:
+          position: 0,1
+          _rotation: South
+        18715:
+          position: 3,1
+          _rotation: South
+        18716:
+          position: 6,1
+          _rotation: South
+        18717:
+          position: 0,2
+          _rotation: South
+        18718:
+          position: 3,2
+          _rotation: South
+        18719:
+          position: 6,2
+          _rotation: South
+        18720:
+          position: 0,3
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 18711
+          - 18712
+          - 18713
+          - 18714
+          - 18715
+          - 18716
+          - 18717
+          - 18718
+          - 18719
+          - 18720
 - proto: Catwalk
   entities:
   - uid: 20
@@ -51831,6 +51867,28 @@ entities:
     - type: Transform
       pos: 26.385427,37.27761
       parent: 2
+- proto: ChemistryEmptyVial
+  entities:
+  - uid: 4094
+    components:
+    - type: Transform
+      pos: 19.960098,21.84556
+      parent: 2
+  - uid: 4095
+    components:
+    - type: Transform
+      pos: 20.116348,21.62681
+      parent: 2
+  - uid: 8822
+    components:
+    - type: Transform
+      pos: 24.581747,10.684262
+      parent: 2
+  - uid: 15849
+    components:
+    - type: Transform
+      pos: 27.824532,35.632626
+      parent: 2
 - proto: ChemistryHotplate
   entities:
   - uid: 316
@@ -53014,8 +53072,8 @@ entities:
     - type: Transform
       parent: 15428
     - type: Clothing
-      inSlotFlag: HEAD
       inSlot: head
+      inSlotFlag: HEAD
     - type: Physics
       canCollide: False
 - proto: ClothingHeadHatBlacksoft
@@ -53317,8 +53375,8 @@ entities:
     - type: Transform
       parent: 15428
     - type: Clothing
-      inSlotFlag: NECK
       inSlot: neck
+      inSlotFlag: NECK
     - type: Physics
       canCollide: False
 - proto: ClothingNeckCloakTrans
@@ -53894,6 +53952,10 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 7.5,5.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Service
+      - - Theatre
 - proto: ComputerComms
   entities:
   - uid: 4626
@@ -63568,6 +63630,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 4.5,5.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Engineering
     - type: DeviceNetwork
       deviceLists:
       - 818
@@ -90382,6 +90447,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 4.5,-4.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Bar
     - type: DeviceLinkSource
       linkedPorts:
         6001:
@@ -100299,6 +100367,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.5,-3.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
   - uid: 4706
     components:
     - type: Transform
@@ -100315,18 +100385,24 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.5,-6.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
   - uid: 6001
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -1.5,-5.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
   - uid: 6002
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -1.5,-4.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
   - uid: 11215
     components:
     - type: Transform
@@ -103961,6 +104037,48 @@ entities:
     - type: Transform
       pos: 57.592808,4.339612
       parent: 2
+  - uid: 18714
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
+  - uid: 18715
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
+  - uid: 18716
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
+  - uid: 18717
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
+  - uid: 18718
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
+  - uid: 18719
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
+  - uid: 18720
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
 - proto: SpaceCash10
   entities:
   - uid: 9388
@@ -104013,6 +104131,24 @@ entities:
     - type: Transform
       pos: 57.514683,4.511487
       parent: 2
+  - uid: 18711
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
+  - uid: 18712
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
+  - uid: 18713
+    components:
+    - type: Transform
+      parent: 18710
+    - type: Physics
+      canCollide: False
 - proto: SpaceHeaterAnchored
   entities:
   - uid: 2729
@@ -104025,7 +104161,7 @@ entities:
     - type: Transform
       pos: 28.5,-30.5
       parent: 2
-- proto: SpacemenFigureSpawner
+- proto: SpacemenFigurineSpawner90
   entities:
   - uid: 3089
     components:
@@ -108825,6 +108961,12 @@ entities:
     components:
     - type: Transform
       pos: 51.5,5.5
+      parent: 2
+  - uid: 18709
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,-6.5
       parent: 2
 - proto: TableFancyBlue
   entities:

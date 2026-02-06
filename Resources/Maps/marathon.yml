@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 269.0.1
+  engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/23/2025 21:10:24
-  entityCount: 23881
+  time: 02/06/2026 17:30:12
+  entityCount: 23883
 maps:
 - 5350
 grids:
@@ -7579,6 +7579,8 @@ entities:
     - type: GridPathfinding
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 5350
     components:
     - type: MetaData
@@ -11784,7 +11786,7 @@ entities:
       pos: 34.5,45.5
       parent: 30
     - type: Door
-      secondsUntilStateChange: -48347.26
+      secondsUntilStateChange: -48401.777
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -48841,6 +48843,20 @@ entities:
     components:
     - type: Transform
       pos: -58.5,-52.5
+      parent: 30
+- proto: CashRegister
+  entities:
+  - uid: 23882
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -10.5,10.5
+      parent: 30
+  - uid: 23883
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -5.5,12.5
       parent: 30
 - proto: Catwalk
   entities:

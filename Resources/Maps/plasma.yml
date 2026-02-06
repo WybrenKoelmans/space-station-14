@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 270.0.0
+  engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/28/2025 21:35:23
-  entityCount: 26487
+  time: 02/06/2026 17:37:41
+  entityCount: 26488
 maps:
 - 1
 grids:
@@ -10248,6 +10248,8 @@ entities:
     - type: ImplicitRoof
     - type: NavMap
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
 - proto: AccordionInstrument
   entities:
   - uid: 25884
@@ -14968,7 +14970,7 @@ entities:
       pos: -131.5,-45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -64586.55
+      secondsUntilStateChange: -64665.65
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -24908,18 +24910,6 @@ entities:
     components:
     - type: Transform
       pos: -118.34879,31.563398
-      parent: 2
-- proto: BaseChemistryEmptyVial
-  entities:
-  - uid: 881
-    components:
-    - type: Transform
-      pos: -94.74149,-71.37663
-      parent: 2
-  - uid: 2159
-    components:
-    - type: Transform
-      pos: -94.53837,-71.20476
       parent: 2
 - proto: BaseComputer
   entities:
@@ -57628,6 +57618,14 @@ entities:
     - type: Transform
       pos: -133.5,-47.5
       parent: 2
+- proto: CashRegister
+  entities:
+  - uid: 21087
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -67.5,-32.5
+      parent: 2
 - proto: Catwalk
   entities:
   - uid: 15
@@ -65203,6 +65201,18 @@ entities:
     components:
     - type: Transform
       pos: -36.404404,-30.261925
+      parent: 2
+- proto: ChemistryEmptyVial
+  entities:
+  - uid: 881
+    components:
+    - type: Transform
+      pos: -94.74149,-71.37663
+      parent: 2
+  - uid: 2159
+    components:
+    - type: Transform
+      pos: -94.53837,-71.20476
       parent: 2
 - proto: ChemistryHotplate
   entities:
@@ -152492,6 +152502,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: -70.5,-37.5
       parent: 2
+  - uid: 20536
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -67.5,-32.5
+      parent: 2
   - uid: 20771
     components:
     - type: Transform
@@ -152982,13 +152998,6 @@ entities:
     components:
     - type: Transform
       pos: -35.631615,-5.6210203
-      parent: 2
-- proto: TowelColorOrange
-  entities:
-  - uid: 26405
-    components:
-    - type: Transform
-      pos: -86.3342,-46.265816
       parent: 2
 - proto: TowelColorWhite
   entities:
@@ -171105,7 +171114,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -264693.3
+      secondsUntilStateChange: -264772.4
       state: Opening
     - type: Airlock
       autoClose: False

@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 268.0.0
+  engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/07/2025 22:21:20
-  entityCount: 28813
+  time: 02/06/2026 15:41:59
+  entityCount: 28824
 maps:
 - 780
 grids:
@@ -10949,6 +10949,8 @@ entities:
     - type: GridPathfinding
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 11906
     components:
     - type: MetaData
@@ -11004,6 +11006,8 @@ entities:
     - type: GridPathfinding
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 19976
@@ -64459,6 +64463,62 @@ entities:
     - type: Transform
       pos: -8.5,-14.5
       parent: 8364
+- proto: CashRegister
+  entities:
+  - uid: 28814
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-6.5
+      parent: 8364
+    - type: Storage
+      storedItems:
+        28815:
+          position: 0,0
+          _rotation: South
+        28816:
+          position: 3,0
+          _rotation: South
+        28817:
+          position: 6,0
+          _rotation: South
+        28818:
+          position: 0,1
+          _rotation: South
+        28819:
+          position: 3,1
+          _rotation: South
+        28820:
+          position: 6,1
+          _rotation: South
+        28821:
+          position: 0,2
+          _rotation: South
+        28822:
+          position: 3,2
+          _rotation: South
+        28823:
+          position: 6,2
+          _rotation: South
+        28824:
+          position: 0,3
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 28815
+          - 28816
+          - 28817
+          - 28818
+          - 28819
+          - 28820
+          - 28821
+          - 28822
+          - 28823
+          - 28824
 - proto: Catwalk
   entities:
   - uid: 17
@@ -72837,7 +72897,7 @@ entities:
   - uid: 6988
     components:
     - type: Transform
-      pos: 28.5,-6.5
+      pos: 28.54511,-4.9259415
       parent: 8364
 - proto: ClothingHeadHatTrucker
   entities:
@@ -87252,23 +87312,6 @@ entities:
       parent: 8364
     - type: FaxMachine
       name: Captain
-- proto: FigureSpawner
-  entities:
-  - uid: 7074
-    components:
-    - type: Transform
-      pos: 56.5,1.5
-      parent: 8364
-  - uid: 11690
-    components:
-    - type: Transform
-      pos: 56.5,0.5
-      parent: 8364
-  - uid: 11691
-    components:
-    - type: Transform
-      pos: 12.5,10.5
-      parent: 8364
 - proto: filingCabinet
   entities:
   - uid: 15378
@@ -133174,6 +133217,23 @@ entities:
     - type: Transform
       pos: -31.488705,-11.49092
       parent: 8364
+- proto: MechFigurineSpawner50
+  entities:
+  - uid: 7074
+    components:
+    - type: Transform
+      pos: 56.5,1.5
+      parent: 8364
+  - uid: 11690
+    components:
+    - type: Transform
+      pos: 56.5,0.5
+      parent: 8364
+  - uid: 11691
+    components:
+    - type: Transform
+      pos: 12.5,10.5
+      parent: 8364
 - proto: MedicalBed
   entities:
   - uid: 5082
@@ -135250,6 +135310,33 @@ entities:
     components:
     - type: Transform
       pos: -21.53196,-58.55052
+      parent: 8364
+- proto: PlushieSpawner50
+  entities:
+  - uid: 5445
+    components:
+    - type: Transform
+      pos: 4.5,11.5
+      parent: 8364
+  - uid: 11692
+    components:
+    - type: Transform
+      pos: 58.5,17.5
+      parent: 8364
+  - uid: 11693
+    components:
+    - type: Transform
+      pos: 12.5,11.5
+      parent: 8364
+  - uid: 15957
+    components:
+    - type: Transform
+      pos: -28.5,-55.5
+      parent: 8364
+  - uid: 21954
+    components:
+    - type: Transform
+      pos: -48.5,-12.5
       parent: 8364
 - proto: PortableFlasher
   entities:
@@ -153081,6 +153168,72 @@ entities:
     - type: Transform
       pos: -57.5,-61.5
       parent: 8364
+- proto: SpaceCash1
+  entities:
+  - uid: 28820
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
+  - uid: 28821
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
+  - uid: 28822
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
+  - uid: 28823
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
+  - uid: 28824
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
+- proto: SpaceCash10
+  entities:
+  - uid: 28817
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
+  - uid: 28818
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
+  - uid: 28819
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
+- proto: SpaceCash100
+  entities:
+  - uid: 28815
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
+  - uid: 28816
+    components:
+    - type: Transform
+      parent: 28814
+    - type: Physics
+      canCollide: False
 - proto: SpaceVillainArcadeComputerCircuitboard
   entities:
   - uid: 21709
@@ -161012,33 +161165,6 @@ entities:
     components:
     - type: Transform
       pos: 31.579891,15.170173
-      parent: 8364
-- proto: ToySpawner
-  entities:
-  - uid: 5445
-    components:
-    - type: Transform
-      pos: 4.5,11.5
-      parent: 8364
-  - uid: 11692
-    components:
-    - type: Transform
-      pos: 58.5,17.5
-      parent: 8364
-  - uid: 11693
-    components:
-    - type: Transform
-      pos: 12.5,11.5
-      parent: 8364
-  - uid: 15957
-    components:
-    - type: Transform
-      pos: -28.5,-55.5
-      parent: 8364
-  - uid: 21954
-    components:
-    - type: Transform
-      pos: -48.5,-12.5
       parent: 8364
 - proto: TrainingBomb
   entities:

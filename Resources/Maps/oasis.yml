@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 271.2.0
+  engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/27/2026 04:05:45
-  entityCount: 31167
+  time: 02/06/2026 17:34:34
+  entityCount: 31168
 maps:
 - 1
 grids:
@@ -15517,7 +15517,7 @@ entities:
       pos: -22.5,26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -245564.78
+      secondsUntilStateChange: -245801.95
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15928,6 +15928,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -19.5,-1.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 570
     components:
     - type: Transform
@@ -16373,7 +16375,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -344393.44
+      secondsUntilStateChange: -344630.6
       state: Opening
   - uid: 6934
     components:
@@ -16385,7 +16387,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -344396.06
+      secondsUntilStateChange: -344633.22
       state: Opening
   - uid: 6935
     components:
@@ -16397,7 +16399,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -344394.9
+      secondsUntilStateChange: -344632.06
       state: Opening
   - uid: 6936
     components:
@@ -16408,7 +16410,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -344394.12
+      secondsUntilStateChange: -344631.28
       state: Opening
 - proto: AirlockTheatreLocked
   entities:
@@ -75171,6 +75173,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.2322235,9.437229
       parent: 21002
+- proto: CashRegister
+  entities:
+  - uid: 505
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -17.5,4.5
+      parent: 2
 - proto: Catwalk
   entities:
   - uid: 499
@@ -100353,7 +100363,7 @@ entities:
       pos: -13.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -335717.44
+      secondsUntilStateChange: -335954.6
     - type: DeviceNetwork
       deviceLists:
       - 18275
@@ -147308,7 +147318,7 @@ entities:
       pos: 36.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -372549.22
+      secondsUntilStateChange: -372786.38
       state: Opening
   - uid: 5211
     components:
@@ -204468,7 +204478,7 @@ entities:
       pos: 24.5,2.5
       parent: 21002
     - type: Door
-      secondsUntilStateChange: -717753.75
+      secondsUntilStateChange: -717990.94
       state: Opening
   - uid: 28863
     components:

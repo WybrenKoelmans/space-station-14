@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 268.0.0
+  engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/27/2025 23:30:45
-  entityCount: 18260
+  time: 02/06/2026 19:01:42
+  entityCount: 18271
 maps:
 - 1793
 grids:
@@ -6647,6 +6647,8 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 1793
     components:
     - type: MetaData
@@ -39248,6 +39250,62 @@ entities:
     - type: Transform
       pos: 59.421112,70.45693
       parent: 1
+- proto: CashRegister
+  entities:
+  - uid: 18261
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 53.5,71.5
+      parent: 1
+    - type: Storage
+      storedItems:
+        18262:
+          position: 0,0
+          _rotation: South
+        18263:
+          position: 3,0
+          _rotation: South
+        18264:
+          position: 6,0
+          _rotation: South
+        18265:
+          position: 0,1
+          _rotation: South
+        18266:
+          position: 3,1
+          _rotation: South
+        18267:
+          position: 6,1
+          _rotation: South
+        18268:
+          position: 0,2
+          _rotation: South
+        18269:
+          position: 3,2
+          _rotation: South
+        18270:
+          position: 6,2
+          _rotation: South
+        18271:
+          position: 0,3
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 18262
+          - 18263
+          - 18264
+          - 18265
+          - 18266
+          - 18267
+          - 18268
+          - 18269
+          - 18270
+          - 18271
 - proto: Catwalk
   entities:
   - uid: 118
@@ -95473,6 +95531,42 @@ entities:
     - type: Transform
       pos: 71.301735,108.7702
       parent: 1
+  - uid: 18262
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
+  - uid: 18263
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
+  - uid: 18264
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
+  - uid: 18265
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
+  - uid: 18266
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
+  - uid: 18267
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
 - proto: SpaceCash10
   entities:
   - uid: 7015
@@ -95485,6 +95579,32 @@ entities:
     - type: Transform
       pos: 71.60729,108.7841
       parent: 1
+  - uid: 18269
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
+  - uid: 18270
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
+  - uid: 18271
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
+- proto: SpaceCash100
+  entities:
+  - uid: 18268
+    components:
+    - type: Transform
+      parent: 18261
+    - type: Physics
+      canCollide: False
 - proto: SpaceCash500
   entities:
   - uid: 8696
