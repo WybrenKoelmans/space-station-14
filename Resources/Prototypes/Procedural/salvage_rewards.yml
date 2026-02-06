@@ -49,7 +49,7 @@
     # money
     SpaceCash500: 1.0
     SpaceCash1000: 0.75
-    SpaceCash1000: 0.5
+    SpaceCash5000: 0.5
 
 - type: weightedRandomEntity
   id: SalvageRewardEpic
