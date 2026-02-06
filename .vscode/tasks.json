@@ -108,6 +108,19 @@
             "dependsOn": ["run client", "run server"],
             "dependsOrder": "parallel",
             "problemMatcher": []
+        },
+        {
+            "label": "lint yaml",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "run",
+                "--project",
+                "Content.YAMLLinter/Content.YAMLLinter.csproj",
+                "--configuration",
+                "DebugOpt"
+            ],
+            "problemMatcher": "$msCompile"
         }
     ]
 }
