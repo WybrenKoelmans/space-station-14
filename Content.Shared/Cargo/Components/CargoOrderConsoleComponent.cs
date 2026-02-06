@@ -69,12 +69,6 @@ public sealed partial class CargoOrderConsoleComponent : Component
     public TimeSpan UnboundedAccountActionDelay = TimeSpan.FromSeconds(10);
 
     /// <summary>
-    /// The stack representing cash dispensed on withdrawals.
-    /// </summary>
-    [DataField]
-    public ProtoId<StackPrototype> CashType = "Credit";
-
-    /// <summary>
     /// All of the <see cref="CargoProductPrototype.Group"/>s that are supported.
     /// </summary>
     [DataField, AutoNetworkedField]
