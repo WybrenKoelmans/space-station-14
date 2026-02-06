@@ -95466,7 +95466,7 @@ entities:
     - type: Transform
       pos: 50.5,73.5
       parent: 1
-- proto: SpaceCash
+- proto: SpaceCash1
   entities:
   - uid: 7032
     components:

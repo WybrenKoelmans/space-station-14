@@ -189719,7 +189719,7 @@ entities:
     - type: Transform
       pos: -9.5,-26.5
       parent: 13329
-- proto: SpaceCash
+- proto: SpaceCash1
   entities:
   - uid: 32272
     components:

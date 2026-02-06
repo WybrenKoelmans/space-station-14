@@ -173733,7 +173733,7 @@ entities:
     - type: Transform
       pos: 21.5,-9.5
       parent: 2
-- proto: SpaceCash
+- proto: SpaceCash1
   entities:
   - uid: 7965
     components:
