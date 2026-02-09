@@ -110,6 +110,7 @@
     - id: ClothingShoesBootsCowboyWhite
       amount: 1
   contrabandInventory:
+
     - id: ClothingHeadHatRichard
       amount: 1
     - id: ToyFigurineBoxer
@@ -128,4 +129,6 @@
     - id: ClothingMaskBlushingMime
       amount: 1
     - id: ClothingHeadHatCowboyBountyHunter
+      amount: 1
+    - id: ClothingOuterSuitCarp
       amount: 1

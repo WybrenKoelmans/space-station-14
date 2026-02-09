@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: WinterDrobeInventory
   startingInventory:
+
     - id: ClothingNeckScarfStripedRed
       amount: 3
     - id: ClothingNeckScarfStripedGreen

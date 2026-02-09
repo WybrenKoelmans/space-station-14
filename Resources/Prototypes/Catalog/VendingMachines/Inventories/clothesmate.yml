@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: ClothesMateInventory
   startingInventory:
+
     - id: ClothingBackpack
       amount: 5
     - id: ClothingBackpackDuffel
@@ -175,6 +176,8 @@
       amount: 2
     - id: ClothingEyesGlassesCheapSunglasses
       amount: 3
+    - id: ClothingHeadPropellerHat
+      amount: 2
   contrabandInventory:
     - id: ClothingMaskNeckGaiter
       amount: 2

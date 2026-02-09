@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: GeneDrobeInventory
   startingInventory:
+
     - id: ClothingUniformJumpsuitGenetics
       amount: 2
     - id: ClothingUniformJumpskirtGenetics

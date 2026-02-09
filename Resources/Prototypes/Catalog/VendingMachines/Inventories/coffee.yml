@@ -12,6 +12,7 @@
     - id: DrinkHotCoco
       amount: 5
   contrabandInventory:
+
     - id: DrinkTeapot
       amount: 2
   emaggedInventory:

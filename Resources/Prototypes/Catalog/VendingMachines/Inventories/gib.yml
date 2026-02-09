@@ -18,6 +18,7 @@
     - id: DrinkFourteenLokoCan
       amount: 2
   contrabandInventory:
+
     - id: ClothingNeckStethoscope
       amount: 2
     - id: Saw

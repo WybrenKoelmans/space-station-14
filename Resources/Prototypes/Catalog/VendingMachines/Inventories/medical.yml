@@ -1,4 +1,78 @@
 - type: vendingMachineInventory
+  id: NanoMedInventory
+  startingInventory:
+    - id: HandheldHealthAnalyzer
+      amount: 1
+    - id: Gauze
+      amount: 3
+    - id: Brutepack
+      amount: 3
+    - id: Ointment
+      amount: 3
+    - id: Bloodpack
+      amount: 3
+    - id: ChemistryBottleEpinephrine
+      amount: 3
+    - id: Syringe
+      amount: 3
+    - id: PillCanisterTricordrazine
+      amount: 2
+  contrabandInventory:
+    - id: PillCanisterRandom
+      amount: 1
+
+# All access version. Should reflect the stock of NanoMedInventory, but less powerful
+- type: vendingMachineInventory
+  id: NanoMedCivilianWallInventory
+  startingInventory:
+    - id: HandheldHealthAnalyzer
+      amount: 1
+    - id: Tourniquet
+      amount: 3
+    - id: Brutepack
+      amount: 3
+    - id: AloeCream
+      amount: 3 # Currently just a reskin of Ointment but it's something
+    - id: Bloodpack
+      amount: 3
+    - id: ChemistryBottleInaprovaline
+      amount: 3
+    - id: Syringe
+      amount: 3
+    - id: PillTricordrazine
+      amount: 10
+  contrabandInventory:
+    - id: PillCanisterRandom
+      amount: 1
+
+# Duplicate civilian inventory without "Wall" suffix for vending machine references
+- type: vendingMachineInventory
+  id: NanoMedCivilianInventory
+  startingInventory:
+
+    - id: HandheldHealthAnalyzer
+      amount: 1
+    - id: Tourniquet
+      amount: 3
+    - id: Brutepack
+      amount: 3
+    - id: AloeCream
+      amount: 3 # Currently just a reskin of Ointment but it's something
+    - id: Bloodpack
+      amount: 3
+    - id: ChemistryBottleInaprovaline
+      amount: 3
+    - id: Syringe
+      amount: 3
+    - id: PillTricordrazine
+      amount: 10
+  contrabandInventory:
+
+    - id: PillCanisterRandom
+      amount: 1
+
+# Core medical supply vendor
+- type: vendingMachineInventory
   id: NanoMedPlusInventory
   startingInventory:
     - id: HandheldHealthAnalyzer
@@ -22,3 +96,41 @@
   contrabandInventory:
     - id: FoodApple
       amount: 1
+    - id: ClothingBeltMedicalFilled
+      amount: 2
+    - id: JetInjector
+      amount: 3
+    - id: ClothingBeltMedicalEMTFilled
+      amount: 1
+    - id: EmergencyRollerBedSpawnFolded
+      amount: 1
+    - id: BoxBodyBag
+      amount: 1
+    - id: Gauze
+      amount: 4
+    - id: Defibrillator
+      amount: 2
+    - id: PillCanisterTricordrazine
+      amount: 4
+    - id: ClothingOuterHospitalGown
+      amount: 2
+    - id: PillCanisterRandom
+      amount: 3
+    - id: PillSpaceDrugs
+      amount: 3
+    - id: Tourniquet
+      amount: 5
+    - id: AloeCream
+      amount: 5
+    - id: ChemistryBottleInaprovaline
+      amount: 5
+    - id: PillTricordrazine
+      amount: 10
+    - id: PillIron
+      amount: 5
+    - id: PillCopper
+      amount: 5
+    - id: PillCanisterRandom
+      amount: 1
+    - id: PillSpaceDrugs
+      amount: 3

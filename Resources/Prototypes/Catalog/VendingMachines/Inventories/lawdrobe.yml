@@ -36,6 +36,7 @@
     - id: HandLabeler
       amount: 2
   contrabandInventory:
+
     - id: ClothingOuterRobesJudge
       amount: 1
     - id: ClothingHeadHatPwig

@@ -10,6 +10,7 @@
     - id: DrinkSolDryCan
       amount: 3
   contrabandInventory:
+
     - id: DrinkStarkistCan
       amount: 2
     - id: ToyHammer

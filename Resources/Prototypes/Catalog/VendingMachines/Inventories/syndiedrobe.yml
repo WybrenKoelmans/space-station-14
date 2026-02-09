@@ -30,6 +30,7 @@
     - id: ClothingShoesBootsWinterSyndicate
       amount: 2
   contrabandInventory:
+
     - id: ToyFigurineFootsoldier
       amount: 1
     - id: ToyFigurineNukieElite

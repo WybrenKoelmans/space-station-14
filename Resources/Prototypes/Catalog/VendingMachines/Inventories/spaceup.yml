@@ -16,6 +16,7 @@
     - id: DrinkFourteenLokoCan
       amount: 2
   contrabandInventory:
+
     - id: DrinkSpaceMountainWindBottleFull
       amount: 2
     - id: DrinkSpaceUpBottleFull

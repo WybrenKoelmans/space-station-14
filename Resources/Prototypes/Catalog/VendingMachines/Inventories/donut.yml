@@ -10,6 +10,7 @@
     - id: FoodDonutBungo
       amount: 3
   contrabandInventory:
+
     - id: FoodBagel
       amount: 2
     - id: FoodBagelPoppy

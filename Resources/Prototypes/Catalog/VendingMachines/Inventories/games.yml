@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: GoodCleanFunInventory
   startingInventory:
+
     - id: DiceBag
       amount: 6
     - id: Paper
@@ -31,6 +32,8 @@
       amount: 2
     - id: BooksBag
       amount: 3
+    - id: Magic9Ball
+      amount: 2
   contrabandInventory:
     - id: Basketball
       amount: 1

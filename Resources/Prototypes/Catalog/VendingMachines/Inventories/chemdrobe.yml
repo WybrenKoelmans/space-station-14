@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: ChemDrobeInventory
   startingInventory:
+
     - id: ClothingUniformJumpsuitChemistry
       amount: 2
     - id: ClothingUniformJumpskirtChemistry
@@ -27,6 +28,8 @@
       amount: 2
     - id: ClothingOuterWinterChem
       amount: 2
+    - id: ClothingEyesGlassesChemical
+      amount: 1
   contrabandInventory:
     - id: ToyFigurineChemist
       amount: 1

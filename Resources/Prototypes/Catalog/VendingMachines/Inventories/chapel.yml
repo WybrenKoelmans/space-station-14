@@ -42,6 +42,7 @@
     - id: Bible
       amount: 1
   contrabandInventory:
+
     - id: FoodBakedBunHotX
       amount: 2
     - id: DrinkWineBottleFull

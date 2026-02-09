@@ -50,6 +50,7 @@
     - id: ClothingHeadHelmetJustice
       amount: 1
   contrabandInventory:
+
     - id: ClothingMaskClownSecurity
       amount: 1
     - id: ToyFigurineSecurity
@@ -57,4 +58,6 @@
     - id: ToyFigurineWarden
       amount: 1
     - id: ToyFigurineHeadOfSecurity
+      amount: 1
+    - id: ClothingMaskMimeSecurity
       amount: 1

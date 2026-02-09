@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: MediDrobeInventory
   startingInventory:
+
     - id: ClothingBackpackDuffelMedical
       amount: 4
     - id: ClothingBackpackMedical
@@ -44,6 +45,24 @@
     - id: ClothingHeadHatSurgcapPurple
       amount: 4
     - id: ClothingShoesBootsWinterMed
+      amount: 2
+    - id: ClothingEyesHudMedical
+      amount: 2
+    - id: ClothingEyesEyepatchHudMedical
+      amount: 2
+    - id: ClothingHeadHatParamedicsoft
+      amount: 1
+    - id: ClothingMaskSterile
+      amount: 2
+    - id: ClothingUniformJumpsuitParamedic
+      amount: 1
+    - id: ClothingUniformJumpskirtParamedic
+      amount: 1
+    - id: ClothingOuterCoatParamedicWB
+      amount: 1
+    - id: ClothingOuterWinterPara
+      amount: 1
+    - id: ClothingShoesColorBlue
       amount: 2
   contrabandInventory:
     - id: ClothingUniformJumpskirtOfLife

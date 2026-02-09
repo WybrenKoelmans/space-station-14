@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: VendomatInventory
   startingInventory:
+
     - id: RemoteSignaller
       amount: 1
     - id: Igniter

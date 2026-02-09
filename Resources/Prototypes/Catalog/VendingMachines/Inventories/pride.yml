@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: PrideDrobeInventory
   startingInventory:
+
     - id: ClothingNeckLGBTPin
       amount: 3
     - id: ClothingNeckAllyPin
@@ -78,6 +79,8 @@
     - id: ClothingUnderSocksCoder
       amount: 2
     - id: ClothingUnderSocksBee
+      amount: 2
+    - id: ClothingMultipleHeadphones
       amount: 2
   contrabandInventory:
     - id: ClothingNeckScarfStripedLesbianLong

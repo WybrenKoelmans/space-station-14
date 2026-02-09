@@ -28,6 +28,7 @@
     - id: FlippoLighter
       amount: 2
   contrabandInventory:
+
     - id: GroundTobacco
       amount: 3
     - id: CigarGold

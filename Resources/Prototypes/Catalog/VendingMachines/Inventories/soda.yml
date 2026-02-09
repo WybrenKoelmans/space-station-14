@@ -18,6 +18,7 @@
     - id: DrinkFourteenLokoCan
       amount: 3
   contrabandInventory:
+
     - id: DrinkColaBottleFull
       amount: 2
   emaggedInventory:

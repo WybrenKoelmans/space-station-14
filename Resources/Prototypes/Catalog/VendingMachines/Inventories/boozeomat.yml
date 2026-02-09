@@ -94,6 +94,7 @@
     - id: DrinkWineCan
       amount: 5
   contrabandInventory:
+
     - id: ChemistryBottleEthanol
       amount: 3
     - id: DrinkBottleOfNothingFull

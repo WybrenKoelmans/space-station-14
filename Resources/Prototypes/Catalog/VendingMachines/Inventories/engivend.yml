@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: EngiVendInventory
   startingInventory:
+
     - id: ClothingEyesGlassesMeson
       amount: 4
     - id: ClothingHeadHatWelding
@@ -18,6 +19,10 @@
     - id: BoxInflatable
       amount: 2
     - id: ClothingHeadHatCone
+      amount: 4
+    - id: ClothingEyesGlassesThermal
+      amount: 4
+    - id: ClothingEyesHudDiagnostic
       amount: 4
   contrabandInventory:
     - id: CowToolboxFilled

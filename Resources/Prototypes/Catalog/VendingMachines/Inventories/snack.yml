@@ -14,5 +14,8 @@
     - id: FoodSnackSemki
       amount: 3
   contrabandInventory:
+
     - id: FoodSnackSyndi
       amount: 3
+    - id: FoodSnackSwirlLollipop
+      amount: 2

@@ -106,7 +106,6 @@
       amount: 1
     - id: StrangePill
       amount: 3
-  emaggedInventory:
     - id: ChemistryBottlePax
       amount: 3
     - id: ChemistryBottleMuteToxin

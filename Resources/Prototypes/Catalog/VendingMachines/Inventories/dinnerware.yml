@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: DinnerwareInventory
   startingInventory:
+
     - id: ButchCleaver
       amount: 1
     - id: KitchenKnife
@@ -53,6 +54,10 @@
       amount: 2
     - id: DrinkMugRed
       amount: 2
+    - id: MortarAndPestle
+      amount: 1
+    - id: HandheldJuicer
+      amount: 1
   contrabandInventory:
     - id: CandyBowl
       amount: 1

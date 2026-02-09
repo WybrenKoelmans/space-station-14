@@ -20,6 +20,7 @@
     - id: DrinkFourteenLokoCan
       amount: 2
   contrabandInventory:
+
     - id: DrinkDrGibbCan
       amount: 3
   emaggedInventory:

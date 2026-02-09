@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: SecTechInventory
   startingInventory:
+
     - id: SecurityWhistle
       amount: 5
     - id: Handcuffs
@@ -39,6 +40,8 @@
       amount: 2
     - id: RadioHandheldSecurity
       amount: 5
+    - id: Bola
+      amount: 6
   contrabandInventory:
     - id: WeaponMeleeNeedle
       amount: 2

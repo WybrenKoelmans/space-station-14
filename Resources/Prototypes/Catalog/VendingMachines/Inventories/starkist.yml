@@ -18,6 +18,7 @@
     - id: DrinkFourteenLokoCan
       amount: 2
   contrabandInventory:
+
     - id: FoodBurgerCarp
       amount: 2
   emaggedInventory:

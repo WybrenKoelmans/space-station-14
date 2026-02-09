@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: BarDrobeInventory
   startingInventory:
+
     - id: ClothingHeadHatBowlerHat
       amount: 2
     - id: ClothingHeadHatTophat
@@ -30,6 +31,8 @@
     - id: ClothingBeltBandolier
       amount: 2
     - id: ClothingEyesGlassesSunglasses
+      amount: 2
+    - id: ClothingUniformJumpsuitJacketMonkey
       amount: 2
   contrabandInventory:
     - id: ToyFigurineBartender

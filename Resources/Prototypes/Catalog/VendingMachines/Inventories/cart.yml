@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: PTechInventory
   startingInventory:
+
     - id: PassengerPDA
       amount: 5
     - id: ClearPDA
@@ -31,6 +32,8 @@
       amount: 1
     - id: EncryptionKeyService
       amount: 3
+    - id: BoxFolderPlasticClipboardEmpty
+      amount: 2
   contrabandInventory:
     - id: BalloonNT
       amount: 2

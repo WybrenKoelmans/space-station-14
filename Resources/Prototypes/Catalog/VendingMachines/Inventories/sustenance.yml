@@ -10,6 +10,7 @@
     - id: FoodCondimentPacketKetchup
       amount: 5
   contrabandInventory:
+
     - id: FoodTinMRE
       amount: 3
     - id: FoodTinBeans

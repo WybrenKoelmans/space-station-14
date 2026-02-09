@@ -76,6 +76,7 @@
     - id: WatermelonSeeds
       amount: 5
   contrabandInventory:
+
     - id: TobaccoSeeds
       amount: 2
     - id: FoodSnackSemki

@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: NutriMaxInventory
   startingInventory:
+
     - id: HydroponicsToolSpade
       amount: 4
     - id: HydroponicsToolMiniHoe
@@ -40,4 +41,8 @@
       amount: 1
   emaggedInventory:
     - id: ChemistryBottleLeft4Zed
+      amount: 1
+    - id: MortarAndPestle
+      amount: 1
+    - id: HandheldJuicer
       amount: 1

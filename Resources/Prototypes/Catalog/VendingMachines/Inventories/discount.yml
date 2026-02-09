@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: DiscountDansInventory
   startingInventory:
+
     - id: FoodSnackCheesie
       amount: 3
     - id: FoodSnackChips
@@ -15,6 +16,8 @@
       amount: 3
     - id: CigPackMixed
       amount: 2
+    - id: DiscountDanLighter
+      amount: 1
   contrabandInventory:
     - id: FoodSnackDanDanNoodles
       amount: 3

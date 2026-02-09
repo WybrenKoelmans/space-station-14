@@ -6,6 +6,7 @@
     - id: HappyHonkMime
       amount: 4
   contrabandInventory:
+
     - id: ToyFigurineClown
       amount: 1
     - id: ToyFigurineMime
