@@ -8,6 +8,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Emp;
 using Content.Shared.Power;
+using Content.Shared.Stacks;
 using Content.Shared.Throwing;
 using Content.Shared.VendingMachines;
 using Content.Shared.Wall;
@@ -162,6 +163,12 @@ namespace Content.Server.VendingMachines
             }
         }
 
+        protected override void EjectCash(EntityUid uid, int cash, VendingMachineComponent vendComponent)
+        {
+            var cashEnt = Spawn(vendComponent.CashType, Transform(uid).Coordinates);
+            _stack.SetCount(cashEnt, cash);
+        }
+
         protected override void EjectItem(EntityUid uid, VendingMachineComponent? vendComponent = null, bool forceEject = false)
         {
             if (!Resolve(uid, ref vendComponent))
@@ -227,10 +234,10 @@ namespace Content.Server.VendingMachines
 
                 if (PrototypeManager.TryIndex(vendingInventory, out VendingMachineInventoryPrototype? inventoryPrototype))
                 {
-                    foreach (var (item, amount) in inventoryPrototype.StartingInventory)
+                    foreach (var entry in inventoryPrototype.StartingInventory)
                     {
-                        if (PrototypeManager.TryIndex(item, out EntityPrototype? entity))
-                            total += _pricing.GetEstimatedPrice(entity) * amount;
+                        if (PrototypeManager.TryIndex(entry.ID, out EntityPrototype? entity))
+                            total += _pricing.GetEstimatedPrice(entity) * entry.Amount;
                     }
                 }
 

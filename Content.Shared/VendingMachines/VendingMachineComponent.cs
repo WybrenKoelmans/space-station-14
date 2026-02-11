@@ -1,6 +1,9 @@
 using Content.Shared.Actions;
+using Content.Shared.Cargo.Prototypes;
+using Content.Shared.Stacks;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -65,10 +68,20 @@ namespace Content.Shared.VendingMachines
         [DataField]
         public TimeSpan? DispenseOnHitEnd;
 
+        /// <summary>
+        /// The stack representing cash dispensed on withdrawals.
+        /// </summary>
+        public ProtoId<StackPrototype> CashType = "SpaceCash";
+
         public string? NextItemToEject;
 
         [DataField]
         public bool Broken;
+
+        public ProtoId<CargoAccountPrototype> Account = "Cargo";
+
+        [ViewVariables]
+        public int Credit = 0;
 
         /// <summary>
         /// When true, will forcefully throw any object it dispenses
@@ -217,6 +230,7 @@ namespace Content.Shared.VendingMachines
             Type = type;
             ID = id;
             Amount = amount;
+            ItemPrice = itemPrice;
         }
 
         public VendingMachineInventoryEntry(VendingMachineInventoryEntry entry)
@@ -224,6 +238,7 @@ namespace Content.Shared.VendingMachines
             Type = entry.Type;
             ID = entry.ID;
             Amount = entry.Amount;
+            ItemPrice = entry.ItemPrice;
         }
     }
 

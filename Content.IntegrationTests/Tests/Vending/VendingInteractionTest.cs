@@ -15,6 +15,8 @@ public sealed class VendingInteractionTest : InteractionTest
 {
     private const string VendingMachineProtoId = "InteractionTestVendingMachine";
 
+    private const string PaidVendingMachineProtoId = "InteractionTestVendingInventoryPaid";
+
     private const string VendedItemProtoId = "InteractionTestItem";
 
     private const string RestockBoxProtoId = "InteractionTestRestockBox";
@@ -22,6 +24,7 @@ public sealed class VendingInteractionTest : InteractionTest
     private const string RestockBoxOtherProtoId = "InteractionTestRestockBoxOther";
     private static readonly ProtoId<DamageTypePrototype> TestDamageType = "Blunt";
 
+    private const string SomeSpesosProtoId = "SomeSpesosProtoId";
     [TestPrototypes]
     private const string TestPrototypes = $@"
 - type: entity
@@ -32,12 +35,21 @@ public sealed class VendingInteractionTest : InteractionTest
 - type: vendingMachineInventory
   id: InteractionTestVendingInventory
   startingInventory:
-    {VendedItemProtoId}: 5
+    - id: {VendedItemProtoId}
+      amount: 5
 
 - type: vendingMachineInventory
   id: InteractionTestVendingInventoryOther
   startingInventory:
-    {VendedItemProtoId}: 5
+    - id: {VendedItemProtoId}
+      amount: 5
+
+- type: vendingMachineInventory
+  id: InteractionTestVendingInventoryPaid
+  startingInventory:
+    - id: {VendedItemProtoId}
+      amount: 5
+      price: 400
 
 - type: entity
   parent: BaseVendingMachineRestock
@@ -61,6 +73,16 @@ public sealed class VendingInteractionTest : InteractionTest
   components:
   - type: VendingMachine
     pack: InteractionTestVendingInventory
+    ejectDelay: 0 # no delay to speed up tests
+  - type: Sprite
+    sprite: error.rsi
+
+- type: entity
+  id: {PaidVendingMachineProtoId}
+  parent: VendingMachine
+  components:
+  - type: VendingMachine
+    pack: InteractionTestVendingInventoryPaid
     ejectDelay: 0 # no delay to speed up tests
   - type: Sprite
     sprite: error.rsi
@@ -133,6 +155,54 @@ public sealed class VendingInteractionTest : InteractionTest
         await AssertEntityLookup(
             ("APCBasic", 1),
             (VendedItemProtoId, 1)
+        );
+    }
+
+    [Test]
+    public async Task DispensePaidItemTest()
+    {
+        await SpawnTarget(PaidVendingMachineProtoId);
+        var vendorEnt = SEntMan.GetEntity(Target.Value);
+
+        var vendingSystem = SEntMan.System<VendingMachineSystem>();
+        var items = vendingSystem.GetAllInventory(vendorEnt);
+
+        // Verify initial item count
+        Assert.That(items, Is.Not.Empty, $"{VendingMachineProtoId} spawned with no items.");
+        Assert.That(items.First().Amount, Is.EqualTo(5), $"{VendingMachineProtoId} spawned with unexpected item count.");
+
+        // Power the vending machine
+        await SpawnEntity("APCBasic", SEntMan.GetCoordinates(TargetCoords));
+        await RunTicks(1);
+
+        // Insert cash
+        await InteractUsing("SpaceCash", 500);
+        await RunTicks(1);
+
+        // Open the BUI
+        await Activate();
+        Assert.That(IsUiOpen(VendingMachineUiKey.Key), "BUI failed to open.");
+
+        // Request an item be dispensed
+        var ev = new VendingMachineEjectMessage(InventoryType.Regular, VendedItemProtoId);
+        await SendBui(VendingMachineUiKey.Key, ev);
+
+        // Make sure the stock decreased
+        Assert.That(items.First().Amount, Is.EqualTo(4), "Stocked item count did not decrease.");
+
+        // Request an item be dispensed
+        await SendBui(VendingMachineUiKey.Key, ev);
+        Assert.That(items.First().Amount, Is.EqualTo(4), "Stocked item count decrease despite lack of money.");
+
+        // Request an cash be dispensed
+        var ev2 = new VendingMachineWithrawMessage();
+        await SendBui(VendingMachineUiKey.Key, ev2);
+
+        // Make sure the dispensed item was spawned in to the world
+        await AssertEntityLookup(
+            ("APCBasic", 1),
+            (VendedItemProtoId, 1),
+            ("SpaceCash", 100)
         );
     }
 
