@@ -104,7 +104,7 @@ public sealed partial class CargoSystem
         Dirty(ent);
     }
 
-    private void SpawnSpaceCashBundle(Robust.Shared.Map.EntityCoordinates coords, int amount, string basePrototypeId)
+    public void SpawnSpaceCashBundle(Robust.Shared.Map.EntityCoordinates coords, int amount, string basePrototypeId)
     {
         if (amount <= 0)
             return;

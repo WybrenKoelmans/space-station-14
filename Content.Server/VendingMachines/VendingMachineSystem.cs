@@ -2,8 +2,10 @@ using System.Linq;
 using System.Numerics;
 using Content.Server.Cargo.Systems;
 using Content.Server.Power.Components;
+using Content.Server.Station.Systems;
 using Content.Server.Vocalization.Systems;
 using Content.Shared.Cargo;
+using Content.Shared.Cargo.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Emp;
@@ -22,6 +24,9 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
+        [Dependency] private readonly SharedStackSystem _stack = default!;
+        [Dependency] private readonly CargoSystem _cargo = default!;
+        [Dependency] private readonly StationSystem _station = default!;
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -165,8 +170,7 @@ namespace Content.Server.VendingMachines
 
         protected override void EjectCash(EntityUid uid, int cash, VendingMachineComponent vendComponent)
         {
-            var cashEnt = Spawn(vendComponent.CashType, Transform(uid).Coordinates);
-            _stack.SetCount(cashEnt, cash);
+            _cargo.SpawnSpaceCashBundle(Transform(uid).Coordinates, cash, "SpaceCash");
         }
 
         protected override void EjectItem(EntityUid uid, VendingMachineComponent? vendComponent = null, bool forceEject = false)
@@ -223,6 +227,26 @@ namespace Content.Server.VendingMachines
             }
         }
 
+        protected override void AddCreditToBankAccount(int value, EntityUid ent, VendingMachineComponent vendingMachineComponent)
+        {
+            if (_station.GetOwningStation(ent) is not { } station ||
+                !TryComp<StationBankAccountComponent>(station, out var bank))
+                return;
+
+            _cargo.UpdateBankAccount((station, bank), value, vendingMachineComponent.Account, dirty: true);
+        }
+
+        public void TryRestockInventory(EntityUid uid, VendingMachineComponent? vendComponent = null)
+        {
+            if (!Resolve(uid, ref vendComponent))
+                return;
+
+            RestockInventoryFromPrototype(uid, vendComponent);
+
+            Dirty(uid, vendComponent);
+            TryUpdateVisualState((uid, vendComponent));
+        }
+
         private void OnPriceCalculation(EntityUid uid, VendingMachineRestockComponent component, ref PriceCalculationEvent args)
         {
             List<double> priceSets = new();
@@ -234,10 +258,10 @@ namespace Content.Server.VendingMachines
 
                 if (PrototypeManager.TryIndex(vendingInventory, out VendingMachineInventoryPrototype? inventoryPrototype))
                 {
-                    foreach (var entry in inventoryPrototype.StartingInventory)
+                    foreach (var (item, data) in inventoryPrototype.StartingInventory)
                     {
-                        if (PrototypeManager.TryIndex(entry.ID, out EntityPrototype? entity))
-                            total += _pricing.GetEstimatedPrice(entity) * entry.Amount;
+                        if (PrototypeManager.TryIndex(item, out EntityPrototype? entity))
+                            total += _pricing.GetEstimatedPrice(entity) * data.Amount;
                     }
                 }
 

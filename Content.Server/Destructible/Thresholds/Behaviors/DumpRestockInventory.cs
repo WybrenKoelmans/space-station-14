@@ -34,9 +34,9 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
             if (!system.PrototypeManager.TryIndex(randomInventory, out VendingMachineInventoryPrototype? packPrototype))
                 return;
 
-            foreach (var vendingMachineInventoryEntry in packPrototype.StartingInventory)
+            foreach (var (entityId, data) in packPrototype.StartingInventory)
             {
-                var toSpawn = (int) Math.Round(vendingMachineInventoryEntry.Amount * Percent);
+                var toSpawn = (int) Math.Round(data.Amount * Percent);
 
                 if (toSpawn == 0) continue;
 
@@ -50,7 +50,7 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
                 {
                     for (var i = 0; i < toSpawn; i++)
                     {
-                        var spawned = system.EntityManager.SpawnEntity(vendingMachineInventoryEntry.ID, xform.Coordinates.Offset(system.Random.NextVector2(-Offset, Offset)));
+                        var spawned = system.EntityManager.SpawnEntity(entityId, xform.Coordinates.Offset(system.Random.NextVector2(-Offset, Offset)));
                         system.EntityManager.GetComponent<TransformComponent>(spawned).LocalRotation = system.Random.NextAngle();
                     }
                 }

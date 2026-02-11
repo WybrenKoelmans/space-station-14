@@ -35,21 +35,25 @@ public sealed class VendingInteractionTest : InteractionTest
 - type: vendingMachineInventory
   id: InteractionTestVendingInventory
   startingInventory:
-    - id: {VendedItemProtoId}
-      amount: 5
+    {VendedItemProtoId}: 5
 
 - type: vendingMachineInventory
   id: InteractionTestVendingInventoryOther
   startingInventory:
-    - id: {VendedItemProtoId}
+    {VendedItemProtoId}: 5
       amount: 5
 
 - type: vendingMachineInventory
   id: InteractionTestVendingInventoryPaid
   startingInventory:
-    - id: {VendedItemProtoId}
+    {VendedItemProtoId}:
       amount: 5
       price: 400
+
+- type: vendingMachineInventory
+  id: InteractionTestVendingInventoryPaid
+  startingInventory:
+    {VendedItemProtoId}: 5
 
 - type: entity
   parent: BaseVendingMachineRestock

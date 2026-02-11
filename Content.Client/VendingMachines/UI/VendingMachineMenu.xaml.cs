@@ -155,12 +155,14 @@ namespace Content.Client.VendingMachines.UI
                 if (itemText.Length > longestEntry.Length)
                     longestEntry = itemText;
 
-                listData.Add(new VendorItemsListData(prototype.ID, i, entry.ItemPrice)
+                var itemPrice = entry.ItemPrice;
+
+                listData.Add(new VendorItemsListData(prototype.ID, i, itemPrice)
                 {
                     ItemText = itemText,
                 });
 
-                if (entry.ItemPrice != 0) balanceBarVisible = true;
+                if (itemPrice != 0) balanceBarVisible = true;
             }
 
             VendingContents.PopulateList(listData);

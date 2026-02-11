@@ -14,6 +14,15 @@
     ClothingHandsGlovesColorYellowBudget: 3
     SprayPainter: 3
     SprayPainterAmmo: 5
+    Multitool:
+      amount: 3
+      price: 200
+    ClothingBeltUtility:
+      amount: 3
+      price: 100
+    ClothingHandsGlovesColorYellow:
+      amount: 3
+      price: 500
   # Some engineer forgot to take the multitool out the youtool when working on it, happens.
   contrabandInventory:
     Multitool: 1

@@ -225,7 +225,10 @@ namespace Content.Shared.VendingMachines
         [DataField]
         public uint Amount;
 
-        public VendingMachineInventoryEntry(InventoryType type, string id, uint amount)
+        [DataField]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public int ItemPrice;
+        public VendingMachineInventoryEntry(InventoryType type, string id, uint amount, int itemPrice)
         {
             Type = type;
             ID = id;
@@ -316,6 +319,8 @@ namespace Content.Shared.VendingMachines
         public TimeSpan? DenyEnd;
 
         public TimeSpan? DispenseOnHitEnd;
+
+        public int Credit;
 
         public bool Broken;
     }
