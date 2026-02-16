@@ -33,3 +33,13 @@
     children:
     - id: Paper
     - id: Pen
+
+# Wages!
+- type: entityTable
+  id: GenericWagesItems
+  table: !type:AllSelector
+    children:
+    - id: MailPayslipLetter
+    - id: SpaceCash10
+    - id: SpaceCash10
+    - id: SpaceCash10

@@ -9,3 +9,13 @@
   - type: Paper
   - type: RandomPaperContent
     dataset: DeliverySpamLetters
+
+- type: entity
+  id: MailPayslipLetter
+  name: payslip letter
+  description: Your monthly wages, delivered straight to your inbox.
+  parent: Paper
+  components:
+  - type: Paper
+  - type: RandomPaperContent
+    dataset: DeliveryPayslipLetters

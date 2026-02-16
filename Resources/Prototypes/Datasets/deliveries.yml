@@ -3,3 +3,9 @@
   values:
     prefix: delivery-spam-
     count: 13
+
+- type: localizedDataset
+  id: DeliveryPayslipLetters
+  values:
+    prefix: delivery-payslip-
+    count: 5
