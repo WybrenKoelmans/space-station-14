@@ -19,8 +19,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Markdown.Value;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared.Stacks;
 using Content.Shared.Cargo.Components;
+using Content.Shared.Storage;
+using Robust.Shared.Network;
 
 namespace Content.Shared.VendingMachines;
 
@@ -28,18 +29,19 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
-    [Dependency] private   readonly AccessReaderSystem _accessReader = default!;
-    [Dependency] private   readonly SharedAppearanceSystem _appearanceSystem = default!;
+    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
-    [Dependency] private   readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] protected readonly SharedPointLightSystem Light = default!;
-    [Dependency] private   readonly SharedPowerReceiverSystem _receiver = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
-    [Dependency] private   readonly SharedSpeakOnUIClosedSystem _speakOn = default!;
+    [Dependency] private readonly SharedSpeakOnUIClosedSystem _speakOn = default!;
     [Dependency] protected readonly SharedUserInterfaceSystem UISystem = default!;
     [Dependency] protected readonly IRobustRandom Randomizer = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
-    [Dependency] private readonly SharedStackSystem _stack = default!;
+    [Dependency] private readonly INetManager _net = default!;
+    private static readonly SoundPathSpecifier ApproveSound = new("/Audio/Effects/Cargo/ping.ogg");
 
     public override void Initialize()
     {
@@ -68,28 +70,36 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
 
     private void InteractUsing(Entity<VendingMachineComponent> ent, ref InteractUsingEvent args)
     {
-        if (!TryComp<CashComponent>(args.Used, out var cashComp))
-            return;
-
-
-        int cashAmount;
-        if (TryComp<MetaDataComponent>(args.Used, out var meta) && meta.EntityPrototype != null &&
+        int cashAmount = 0;
+        if (TryComp<CashComponent>(args.Used, out var cashComp) && TryComp<MetaDataComponent>(args.Used, out var meta) && meta.EntityPrototype != null &&
             meta.EntityPrototype.Components.TryGetValue("StaticPrice", out var staticPriceEntry) &&
             staticPriceEntry.Mapping.TryGet<ValueDataNode>("price", out var priceNode))
         {
             cashAmount = priceNode.AsInt();
+
+            PredictedQueueDel(args.Used);
         }
-        else
+        if (TryComp<WalletComponent>(args.Used, out var walletComp))
         {
-            cashAmount = 0;
+            foreach (var item in Comp<StorageComponent>(args.Used).Container.ContainedEntities)
+            {
+                if (TryComp(item, out MetaDataComponent? itemMeta) && itemMeta.EntityPrototype != null &&
+                    itemMeta.EntityPrototype.Components.TryGetValue("StaticPrice", out var itemStaticPriceEntry) &&
+                    itemStaticPriceEntry.Mapping.TryGet<ValueDataNode>("price", out var itemPriceNode))
+                {
+                    cashAmount += itemPriceNode.AsInt();
+
+                    PredictedQueueDel(item);
+                }
+            }
         }
+        if (cashComp == null && walletComp == null)
+            return;
 
-        SoundPathSpecifier approveSound = new("/Audio/Effects/Cargo/ping.ogg");
-        Audio.PlayPredicted(approveSound, ent.Owner, args.User);
+        if (_net.IsServer) Dirty(ent);
+
+        Audio.PlayPredicted(ApproveSound, ent.Owner, args.User);
         ent.Comp.Credit += cashAmount;
-
-        PredictedQueueDel(args.Used);
-        Dirty(ent);
 
         args.Handled = true;
     }
@@ -494,7 +504,7 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
                 var result = Randomizer.NextFloat(0, 1);
                 if (result < chanceOfMissingStock)
                 {
-                    restock = (uint) Math.Floor(entryData.Amount * result / chanceOfMissingStock);
+                    restock = (uint)Math.Floor(entryData.Amount * result / chanceOfMissingStock);
                 }
 
                 if (inventory.TryGetValue(id, out var entry))

@@ -18,10 +18,14 @@
     maxItemSize: Normal
     quickInsert: true
     areaInsert: true
+    areaInsertDelayPerItem: 0.005
     whitelist:
       tags:
         - Cash
   - type: Dumpable
+    delayPerItem: 0.1
+    multiplier: 0.1
+  - type: Wallet
 
 - type: entity
   parent: Wallet
