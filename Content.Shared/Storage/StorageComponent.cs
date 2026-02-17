@@ -99,6 +99,13 @@ namespace Content.Shared.Storage
         public int AreaInsertRadius = 1;
 
         /// <summary>
+        /// How many seconds of do-after delay to add per unit of item weight when area-inserting.
+        /// Configurable via prototypes/datafields.
+        /// </summary>
+        [DataField("areaInsertDelayPerItem")]
+        public TimeSpan AreaInsertDelayPerItem = TimeSpan.FromSeconds(0.075);
+
+        /// <summary>
         /// Whitelist for entities that can go into the storage.
         /// </summary>
         [DataField]

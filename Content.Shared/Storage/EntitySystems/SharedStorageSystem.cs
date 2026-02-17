@@ -85,7 +85,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
     public static readonly ProtoId<ItemSizePrototype> DefaultStorageMaxItemSize = "Normal";
 
-    public const float AreaInsertDelayPerItem = 0.075f;
+    public static readonly TimeSpan DefaultAreaInsertDelay = TimeSpan.FromSeconds(0.075f);
     private static AudioParams _audioParams = AudioParams.Default
         .WithMaxDistance(7f)
         .WithVolume(-2f);
@@ -596,7 +596,12 @@ public abstract class SharedStorageSystem : EntitySystem
             //If there's only one then let's be generous
             if (_entList.Count >= 1)
             {
-                var doAfterArgs = new DoAfterArgs(EntityManager, args.User, delay * AreaInsertDelayPerItem, new AreaPickupDoAfterEvent(GetNetEntityList(_entList)), uid, target: uid)
+                // Use the per-storage configured delay, falling back to the system default.
+                var perItemDelay = storageComp?.AreaInsertDelayPerItem ?? DefaultAreaInsertDelay;
+                var totalSeconds = perItemDelay.TotalSeconds * delay;
+                var totalDelay = TimeSpan.FromSeconds(totalSeconds);
+
+                var doAfterArgs = new DoAfterArgs(EntityManager, args.User, totalDelay, new AreaPickupDoAfterEvent(GetNetEntityList(_entList)), uid, target: uid)
                 {
                     BreakOnDamage = true,
                     BreakOnMove = true,
