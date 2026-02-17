@@ -44,17 +44,17 @@ public sealed class FinesCartridgeSystem : EntitySystem
         {
             var fine = printMsg.Fine;
             var printed = Spawn("Paper", Transform(GetEntity(args.LoaderUid)).Coordinates);
-            
+
             var msg = new FormattedMessage();
             msg.AddMarkupOrThrow($"[center][bold]Security Fine[/bold][/center]\n");
             msg.AddMarkupOrThrow($"[bold]Target:[/bold] {fine.Target}\n");
             msg.AddMarkupOrThrow($"[bold]Reason:[/bold] {fine.Reason}\n");
-            msg.AddMarkupOrThrow($"[bold]Amount:[/bold] {fine.Amount} credits\n");
-            
+            msg.AddMarkupOrThrow($"[bold]Amount:[/bold] {fine.Amount} spesos\n");
+
             _paper.SetContent(printed, msg.ToMarkup());
             _audio.PlayPvs(new SoundPathSpecifier("/Audio/Machines/printer.ogg"), GetEntity(args.LoaderUid));
-            
-            _hands.PickupOrDrop(args.Actor, printed); 
+
+            _hands.PickupOrDrop(args.Actor, printed);
         }
     }
 

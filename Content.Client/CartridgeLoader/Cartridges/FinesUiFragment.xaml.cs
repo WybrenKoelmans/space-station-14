@@ -46,7 +46,7 @@ public sealed partial class FinesUiFragment : BoxContainer
                 Margin = new Thickness(0, 2)
             };
 
-            row.AddChild(new Label { Text = $"{fine.Target}: {fine.Amount} cr - {fine.Reason}", HorizontalExpand = true, ClipText = true });
+            row.AddChild(new Label { Text = $"{fine.Target}: {fine.Amount} spesos - {fine.Reason}", HorizontalExpand = true, ClipText = true });
 
             var printBtn = new Button { Text = "Print" };
             printBtn.OnPressed += _ => OnPrintFine?.Invoke(fine);
