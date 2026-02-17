@@ -86,7 +86,7 @@ wanted-list-unknown-reason-label = unknown reason
 wanted-list-initiator-label = [color=darkgray]Initiator:[/color] [color=white]{$initiator}[/color]
 wanted-list-unknown-initiator-label = unknown initiator
 
-wanted-list-status-label = [color=darkgray]status:[/color] {$status ->
+wanted-list-status-label = [color=darkgray]Status:[/color] {$status ->
         [suspected] [color=yellow]suspected[/color]
         [wanted] [color=red]wanted[/color]
         [detained] [color=#b18644]detained[/color]
@@ -100,3 +100,5 @@ wanted-list-status-label = [color=darkgray]status:[/color] {$status ->
 wanted-list-history-table-time-col = Time
 wanted-list-history-table-reason-col = Crime
 wanted-list-history-table-initiator-col = Initiator
+
+fines-program-name = Fines
