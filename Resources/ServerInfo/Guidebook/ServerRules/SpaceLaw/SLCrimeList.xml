@@ -265,7 +265,7 @@
   </Table>
 
   ## Minor Crimes
-  - Warnings should be issued for a first offense.
+  - Fines should be issued for a first offense.
   - If multiple minor crimes have been committed or it is a repeat offense, 5 minutes per minor crime is the maximum.
   <Table Columns="4">
     <ColorBox>
@@ -344,7 +344,7 @@
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         The difference between petty theft and grand theft is based on how crucial the stolen item is, things like
         instruments, clothing and tools fall under petty theft. In most cases all you need to do is detain the thief,
-        return the stolen item and let them go with a warning.
+        return the stolen item and let them go with a fine.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -418,7 +418,7 @@
 
   ## Moderate Crimes
   - The maximum sentence per moderate crime is 5 minutes.
-  - Depending on the situation you may want to issue a warning instead of a detaining.
+  - Depending on the situation you may want to issue a fine instead of a detaining.
   <Table Columns="4">
     <ColorBox>
       <Box>
@@ -452,7 +452,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        The order has to be reasonable and the person has to receive a good amount of warning before the arrest is
+        The order has to be reasonable and the person has to receive a good amount of fines before the arrest is
         issued.
       </Box>
     </ColorBox>
