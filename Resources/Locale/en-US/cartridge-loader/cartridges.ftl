@@ -1,4 +1,4 @@
-device-pda-slot-component-slot-name-cartridge = Cartridge
+﻿device-pda-slot-component-slot-name-cartridge = Cartridge
 
 default-program-name = Program
 notekeeper-program-name = Notekeeper
@@ -102,3 +102,8 @@ wanted-list-history-table-reason-col = Crime
 wanted-list-history-table-initiator-col = Initiator
 
 fines-program-name = Fines
+fines-cartridge-announcement = {$target} has been fined {$amount} spesos for: {$reason} by {$officer}.
+fines-cartridge-name = [center][bold]Security Fine[/bold][/center]
+fines-cartridge-id = [bold]Target:[/bold] {$target}
+fines-cartridge-reason = [bold]Reason:[/bold] {$reason}
+fines-cartridge-amount = [bold]Amount:[/bold] {$amount} spesos
