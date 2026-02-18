@@ -1,23 +1,4 @@
 ﻿Entries:
-- author: K-Dynamic
-  changes:
-  - message: Puddles now spill over at 50u instead of 20u.
-    type: Add
-  id: 9023
-  time: '2025-10-01T20:28:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38044
-- author: Mixelz
-  changes:
-  - message: Circuit Totes, a new type of box to compactly carry conspicous chunks
-      of Circuits!
-    type: Add
-  - message: Head Lockers now compact all circuit boards & stamps into boxes for convenience.
-    type: Tweak
-  - message: The Surplus Circuit Crate is now a Tote!
-    type: Tweak
-  id: 9024
-  time: '2025-10-01T23:22:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39868
 - author: sudobeans
   changes:
   - message: utility knife, which can be made in the autolathe.
@@ -3995,3 +3976,17 @@
   id: 9530
   time: '2026-02-16T23:03:26.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/42948
+- author: Pgriha
+  changes:
+  - message: Added new emote for moths. They can flaps their wings!
+    type: Add
+  id: 9531
+  time: '2026-02-18T00:04:52.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42912
+- author: pcaessayrs
+  changes:
+  - message: Added Emp interaction with bar sign
+    type: Add
+  id: 9532
+  time: '2026-02-18T00:27:56.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42950
