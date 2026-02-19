@@ -15,3 +15,8 @@ execution-popup-self-initial-internal = You ready {THE($weapon)} against your ow
 execution-popup-self-initial-external = { CAPITALIZE(THE($attacker)) } readies {POSS-ADJ($attacker)} {$weapon} against their own throat.
 execution-popup-self-complete-internal = You slit your own throat!
 execution-popup-self-complete-external = { CAPITALIZE(THE($attacker)) } slits their own throat!
+
+execution-popup-gun-complete-internal = You blew your brains out!
+execution-popup-gun-complete-external = { CAPITALIZE(THE($attacker)) } blew their brains out!
+execution-popup-gun-failed-internal = {THE($weapon)} fails!
+execution-popup-gun-failed-external = {THE($weapon)} fails!

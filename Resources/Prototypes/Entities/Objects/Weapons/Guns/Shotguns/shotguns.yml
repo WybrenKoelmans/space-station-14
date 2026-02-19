@@ -43,6 +43,8 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: Execution
+    doAfterDuration: 3.0
 
 - type: entity
   name: Bulldog

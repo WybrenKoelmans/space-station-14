@@ -45,6 +45,30 @@ public sealed partial class ExecutionComponent : Component
     public LocId CompleteExternalMeleeExecutionMessage = "execution-popup-melee-complete-external";
 
     /// <summary>
+    /// Shown to the attacker upon completion of a gun execution.
+    /// </summary>
+    [DataField]
+    public LocId CompleteInternalGunExecutionMessage = "execution-popup-gun-complete-internal";
+
+    /// <summary>
+    /// Shown to bystanders and the victim of a gun execution when a gun execution is completed.
+    /// </summary>
+    [DataField]
+    public LocId CompleteExternalGunExecutionMessage = "execution-popup-gun-complete-external";
+
+    /// <summary>
+    /// Shown to the attacker upon completion of a gun execution.
+    /// </summary>
+    [DataField]
+    public LocId FailedInternalGunExecutionMessage = "execution-popup-gun-failed-internal";
+
+    /// <summary>
+    /// Shown to bystanders and the victim of a gun execution when a gun execution fails.
+    /// </summary>
+    [DataField]
+    public LocId FailedExternalGunExecutionMessage = "execution-popup-gun-failed-external";
+
+    /// <summary>
     /// Shown to the person performing the self execution when starting one.
     /// </summary>
     [DataField]

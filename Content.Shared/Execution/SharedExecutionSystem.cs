@@ -14,6 +14,9 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Interaction.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Damage;
 
 namespace Content.Shared.Execution;
 
@@ -31,6 +34,7 @@ public sealed class SharedExecutionSystem : EntitySystem
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly SharedExecutionSystem _execution = default!;
     [Dependency] private readonly SharedMeleeWeaponSystem _melee = default!;
+    [Dependency] private readonly SharedGunSystem _gun = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -134,20 +138,42 @@ public sealed class SharedExecutionSystem : EntitySystem
 
     private void OnSuicideByEnvironment(Entity<ExecutionComponent> entity, ref SuicideByEnvironmentEvent args)
     {
-        if (!TryComp<MeleeWeaponComponent>(entity, out var melee))
-            return;
-
-        string? internalMsg = entity.Comp.CompleteInternalSelfExecutionMessage;
-        string? externalMsg = entity.Comp.CompleteExternalSelfExecutionMessage;
-
         if (!TryComp<DamageableComponent>(args.Victim, out var damageableComponent))
             return;
 
-        ShowExecutionInternalPopup(internalMsg, args.Victim, args.Victim, entity, false);
-        ShowExecutionExternalPopup(externalMsg, args.Victim, args.Victim, entity);
-        _audio.PlayPredicted(melee.HitSound, args.Victim, args.Victim);
-        _suicide.ApplyLethalDamage((args.Victim, damageableComponent), melee.Damage);
-        args.Handled = true;
+        if (TryComp<MeleeWeaponComponent>(entity, out var melee))
+        {
+            string? internalMsg = entity.Comp.CompleteInternalSelfExecutionMessage;
+            string? externalMsg = entity.Comp.CompleteExternalSelfExecutionMessage;
+
+            ShowExecutionInternalPopup(internalMsg, args.Victim, args.Victim, entity, false);
+            ShowExecutionExternalPopup(externalMsg, args.Victim, args.Victim, entity);
+            _audio.PlayPredicted(melee.HitSound, args.Victim, args.Victim);
+            _suicide.ApplyLethalDamage((args.Victim, damageableComponent), melee.Damage);
+
+            args.Handled = true;
+
+            return;
+        }
+        else if (TryComp<GunComponent>(entity, out var gun))
+        {
+            string? internalMsg = entity.Comp.CompleteInternalGunExecutionMessage;
+            string? externalMsg = entity.Comp.CompleteExternalGunExecutionMessage;
+
+            ShowExecutionInternalPopup(internalMsg, args.Victim, args.Victim, entity, false);
+            ShowExecutionExternalPopup(externalMsg, args.Victim, args.Victim, entity);
+
+            DamageSpecifier damage = new() 
+            {
+                DamageDict = new()
+                {
+                    { "Slash", 400.0 },
+                },
+            };
+            _suicide.ApplyLethalDamage((args.Victim, damageableComponent), damage);
+
+            args.Handled = true;
+        }
     }
 
     private void ShowExecutionInternalPopup(string locString, EntityUid attacker, EntityUid victim, EntityUid weapon, bool predict = true)
@@ -188,9 +214,6 @@ public sealed class SharedExecutionSystem : EntitySystem
         if (args.Handled || args.Cancelled || args.Used == null || args.Target == null)
             return;
 
-        if (!TryComp<MeleeWeaponComponent>(entity, out var meleeWeaponComp))
-            return;
-
         var attacker = args.User;
         var victim = args.Target.Value;
         var weapon = args.Used.Value;
@@ -198,35 +221,74 @@ public sealed class SharedExecutionSystem : EntitySystem
         if (!_execution.CanBeExecuted(victim, attacker))
             return;
 
-        // This is needed so the melee system does not stop it.
-        var prev = _combat.IsInCombatMode(attacker);
-        _combat.SetInCombatMode(attacker, true);
-        entity.Comp.Executing = true;
-
-        var internalMsg = entity.Comp.CompleteInternalMeleeExecutionMessage;
-        var externalMsg = entity.Comp.CompleteExternalMeleeExecutionMessage;
-
-        if (attacker == victim)
+        if (TryComp<MeleeWeaponComponent>(entity, out var meleeWeaponComp))
         {
-            var suicideEvent = new SuicideEvent(victim);
-            RaiseLocalEvent(victim, suicideEvent);
+            // This is needed so the melee system does not stop it.
+            var prev = _combat.IsInCombatMode(attacker);
+            _combat.SetInCombatMode(attacker, true);
+            entity.Comp.Executing = true;
 
-            var suicideGhostEvent = new SuicideGhostEvent(victim);
-            RaiseLocalEvent(victim, suicideGhostEvent);
+            var internalMsg = entity.Comp.CompleteInternalMeleeExecutionMessage;
+            var externalMsg = entity.Comp.CompleteExternalMeleeExecutionMessage;
+
+            if (attacker == victim)
+            {
+                var suicideEvent = new SuicideEvent(victim);
+                RaiseLocalEvent(victim, suicideEvent);
+
+                var suicideGhostEvent = new SuicideGhostEvent(victim);
+                RaiseLocalEvent(victim, suicideGhostEvent);
+            }
+            else
+            {
+                _melee.AttemptLightAttack(attacker, weapon, meleeWeaponComp, victim);
+            }
+
+            _combat.SetInCombatMode(attacker, prev);
+            entity.Comp.Executing = false;
+            args.Handled = true;
+
+            if (attacker != victim)
+            {
+                _execution.ShowExecutionInternalPopup(internalMsg, attacker, victim, entity);
+                _execution.ShowExecutionExternalPopup(externalMsg, attacker, victim, entity);
+            }
+
+            return;
         }
-        else
+        else if (TryComp<GunComponent>(entity, out var gunComp))
         {
-            _melee.AttemptLightAttack(attacker, weapon, meleeWeaponComp, victim);
-        }
+            var victimCoordinates = Transform(victim).Coordinates;
+            var fired = _gun.AttemptShoot(attacker, (entity, gunComp), victimCoordinates);
 
-        _combat.SetInCombatMode(attacker, prev);
-        entity.Comp.Executing = false;
-        args.Handled = true;
+            if (fired && attacker == victim)
+            {
+                var suicideEvent = new SuicideEvent(victim);
+                var suicideGhostEvent = new SuicideGhostEvent(victim);
+                RaiseLocalEvent(victim, suicideEvent);
+                RaiseLocalEvent(victim, suicideGhostEvent);
+            }
 
-        if (attacker != victim)
-        {
-            _execution.ShowExecutionInternalPopup(internalMsg, attacker, victim, entity);
-            _execution.ShowExecutionExternalPopup(externalMsg, attacker, victim, entity);
+            if (attacker != victim)
+            {
+                if (fired)
+                {
+                    var internalMsg = entity.Comp.CompleteInternalGunExecutionMessage;
+                    var externalMsg = entity.Comp.CompleteExternalGunExecutionMessage;
+                    _execution.ShowExecutionInternalPopup(internalMsg, attacker, victim, entity);
+                    _execution.ShowExecutionExternalPopup(externalMsg, attacker, victim, entity);
+                }
+                else
+                {
+                    var internalMsg = entity.Comp.FailedInternalGunExecutionMessage;
+                    var externalMsg = entity.Comp.FailedExternalGunExecutionMessage;
+                    _execution.ShowExecutionInternalPopup(internalMsg, attacker, victim, entity);
+                    _execution.ShowExecutionExternalPopup(externalMsg, attacker, victim, entity);
+                }
+            }
+
+            entity.Comp.Executing = false;
+            args.Handled = true;
         }
     }
 }
