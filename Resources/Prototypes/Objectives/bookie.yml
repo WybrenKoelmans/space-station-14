@@ -1,0 +1,10 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseBookieObjective
+  components:
+  - type: Objective
+    issuer: objective-issuer-bookie
+  - type: RoleRequirement
+    roles:
+    - BookieRole

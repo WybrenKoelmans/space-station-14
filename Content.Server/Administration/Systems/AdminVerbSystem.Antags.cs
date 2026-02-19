@@ -32,6 +32,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultWizardRule = "Wizard";
     private static readonly EntProtoId DefaultNinjaRule = "NinjaSpawn";
+    private static readonly EntProtoId DefaultBookieRule = "Bookie";
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
     // All antag verbs have names so invokeverb works.
@@ -225,5 +226,20 @@ public sealed partial class AdminVerbSystem
 
         if (HasComp<HumanoidProfileComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
+
+        var bookieName = Loc.GetString("admin-verb-text-make-bookie");
+        Verb bookie = new()
+        {
+            Text = bookieName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Fun/dice.rsi"), "dicebag"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<BookieRuleComponent>(targetPlayer, DefaultBookieRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", bookieName, Loc.GetString("admin-verb-make-bookie")),
+        };
+        args.Verbs.Add(bookie);
     }
 }

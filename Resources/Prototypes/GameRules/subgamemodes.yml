@@ -39,6 +39,41 @@
   - type: GameRule
     cancelPresetOnTooFewPlayers: false
 
+- type: entity
+  parent: BaseGameRule
+  id: Bookie
+  components:
+  - type: BookieRule
+  - type: AntagObjectives
+    objectives:
+    - EscapeBookieShuttleObjective
+  - type: AntagRandomObjectives
+    sets:
+    - groups: BookieBigObjectiveGroups
+      prob: 0.7
+      maxPicks: 1
+    - groups: BookieObjectiveGroups
+      maxPicks: 10
+    maxDifficulty: 2.5
+  - type: AntagSelection
+    agentName: bookie-round-end-agent-name
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ Bookie ]
+      max: 1
+      playerRatio: 20
+      lateJoinAdditional: true
+      allowNonHumans: true
+      startingGear: BookieGear
+      mindRoles:
+      - MindRoleBookie
+      briefing:
+        sound: "/Audio/Misc/thief_greeting.ogg"
+  - type: DynamicRuleCost
+    cost: 75
+  - type: GameRule
+    cancelPresetOnTooFewPlayers: false
+
 # Needs testing
 - type: entity
   parent: BaseWizardRule

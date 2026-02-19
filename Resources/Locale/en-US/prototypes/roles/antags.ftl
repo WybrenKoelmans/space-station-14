@@ -41,6 +41,9 @@ roles-antag-pirate-name = Pirate
 roles-antag-thief-name = Thief
 roles-antag-thief-objective = Add some NT property to your personal collection without using violence.
 
+roles-antag-bookie-name = Bookie
+roles-antag-bookie-objective = Time to make some money! Sure gambling is illegal, but it's so much fun!
+
 roles-antag-dragon-name = Space Dragon
 roles-antag-dragon-objective = Create a carp army to take over this quadrant.
 

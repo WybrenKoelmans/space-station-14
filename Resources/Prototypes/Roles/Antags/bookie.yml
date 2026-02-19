@@ -1,0 +1,20 @@
+- type: antag
+  id: Bookie
+  name: roles-antag-bookie-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-bookie-objective
+  guides: [ Bookies ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 1h
+
+- type: startingGear
+  id: BookieGear
+  storage:
+    back:
+    - DiceBag
+    - WeaponRevolverPirate
+    - ClothingEyesBlindfold
+    - ClothingEyesBlindfold
+    - TrashBag

@@ -1,0 +1,36 @@
+<Document>
+  # Bookies
+
+  <Box>
+    [color=#999999][italic]"The house always wins... and nobody knows the house better than me."[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ClothingNeckCloakVoid" Caption=""/>
+  </Box>
+
+  Bookies are shady [color=green]entrepreneurs[/color] who thrive in the station's underground economy. While technically strictly illegal under NanoTrasen regulations, the demand for high-stakes thrills is always present. You are here to satisfy that demand.
+
+  ## The Hustle
+  Your goal is simple: [bold]Make as much money as possible.[/bold]
+  
+  Since gambling is [color=#cb0000]illegal[/color] on the station, you operate in the shadows. Security will shut you down and confiscate your earnings if they catch you, so discretion is key. You might need to bribe officers, find a secluded basement, or operate under the guise of legitimate "entertainment."
+
+  ## Place Your Bets
+  You organize and manage betting events. Anything with an uncertain outcome is an opportunity for profit. You facilitate the wagers, hold the pot, and inevitably take a cut for your services.
+
+  Popular events to organize include:
+  - [bold]Dice Shoots & Card Games:[/bold] Classic, portable, and easy to hide when the law walks by.
+  - [bold]Sports & Skill:[/bold] Darts, chess matches, or even drinking contests.
+  - [bold]Fight Club:[/bold] MMA, Boxing, or no-holds-barred brawls. These attract the biggest crowds and the biggest bets, but also the most attention.
+
+  ## Tools of the Trade
+  To run a successful operation, you need tools to facilitate the games and manage the credits.
+
+  <Box>
+    <GuideEntityEmbed Entity="Dice" Caption="Chance"/>
+    <GuideEntityEmbed Entity="SpaceCash" Caption="Payouts"/>
+    <GuideEntityEmbed Entity="DrinkBeer" Caption="Refreshments"/>
+  </Box>
+
+  Remember, a good bookie never gambles with their own supply—unless the odds are rigged in their favor.
+</Document>

@@ -250,6 +250,17 @@
     subtype: role-subtype-thief
   - type: ThiefRole
 
+# Bookie
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleBookie
+  name: Bookie Role
+  components:
+  - type: MindRole
+    antagPrototype: Bookie
+    subtype: role-subtype-bookie
+  - type: BookieRole
+
 # Traitors
 - type: entity
   parent: BaseMindRoleAntag

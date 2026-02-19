@@ -5,6 +5,8 @@ using Content.Client.Resources;
 using Content.Client.Stylesheets;
 using Content.Client.Weapons.Ranged.Components;
 using Content.Client.Weapons.Ranged.ItemStatus;
+using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Eye.Blinding.Systems;
 using Robust.Client.Animations;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
@@ -31,6 +33,12 @@ public sealed partial class GunSystem
     {
         ent.Comp.Control?.Dispose();
         ent.Comp.Control = null;
+
+        var player = _player.LocalEntity;
+        if (player != null && TryComp(player.Value, out BlindableComponent? blindable) && blindable.IsBlind)
+        {
+            return;
+        }
 
         var ev = new AmmoCounterControlEvent();
         RaiseLocalEvent(ent, ev, false);
