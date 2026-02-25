@@ -71,7 +71,7 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
     private void InteractUsing(Entity<VendingMachineComponent> ent, ref InteractUsingEvent args)
     {
         int cashAmount = 0;
-        if (TryComp<CashComponent>(args.Used, out var cashComp) && TryComp<MetaDataComponent>(args.Used, out var meta) && meta.EntityPrototype != null &&
+        if (TryComp<CashComponent>(args.Used, out var cashComp) && TryComp(args.Used, out MetaDataComponent? meta) && meta.EntityPrototype != null &&
             meta.EntityPrototype.Components.TryGetValue("StaticPrice", out var staticPriceEntry) &&
             staticPriceEntry.Mapping.TryGet<ValueDataNode>("price", out var priceNode))
         {
