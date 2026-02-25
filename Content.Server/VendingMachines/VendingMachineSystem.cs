@@ -24,7 +24,6 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
-        [Dependency] private readonly SharedStackSystem _stack = default!;
         [Dependency] private readonly CargoSystem _cargo = default!;
         [Dependency] private readonly StationSystem _station = default!;
 
@@ -236,7 +235,7 @@ namespace Content.Server.VendingMachines
             _cargo.UpdateBankAccount((station, bank), value, vendingMachineComponent.Account, dirty: true);
         }
 
-        public void TryRestockInventory(EntityUid uid, VendingMachineComponent? vendComponent = null)
+        public new void TryRestockInventory(EntityUid uid, VendingMachineComponent? vendComponent = null)
         {
             if (!Resolve(uid, ref vendComponent))
                 return;
